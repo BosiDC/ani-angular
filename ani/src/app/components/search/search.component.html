@@ -1,1 +1,5 @@
-<p>search works!</p>
+<form class="form" (ngSubmit)="onSubmit()">
+    <input type="text" name="title" [(ngModel)]="title" placeholder="Search anime...">
+    <input type="submit" value="Search" class="btn">
+</form>
+<p>{{ title }}</p>
