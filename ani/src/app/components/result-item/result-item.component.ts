@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Anime } from '../../models/Anime';
+import { Top } from '../../models/Anime';
 import { ResultService } from '../../services/result.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { ResultService } from '../../services/result.service';
   styleUrls: ['./result-item.component.css']
 })
 export class ResultItemComponent implements OnInit {
-  @Input() result: Anime;
+  @Input() result: Top;
 
   constructor(private resultService: ResultService) { }
 

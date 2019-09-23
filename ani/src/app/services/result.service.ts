@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Anime } from '../models/Anime';
+import { Top } from '../models/Anime';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,7 +11,7 @@ export class ResultService {
 
   constructor(private http: HttpClient) { }
 
-  getTop(): Observable<Anime[]> {
-    return this.http.get<Anime[]>(this.topURL + 'airing');
+  getTop(): Observable<Top[]> {
+    return this.http.get<Top[]>(this.topURL + 'airing');
   }
 }
