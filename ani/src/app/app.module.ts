@@ -8,6 +8,8 @@ import { HeaderComponent } from './layout/header/header.component';
 import { SearchComponent } from './components/search/search.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ResultComponent } from './components/result/result.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ResultItemComponent } from './components/result-item/result-item.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ResultComponent } from './components/result/result.component';
     HeaderComponent,
     SearchComponent,
     ProfileComponent,
-    ResultComponent
+    ResultComponent,
+    AboutComponent,
+    ResultItemComponent
   ],
   imports: [
     BrowserModule,
