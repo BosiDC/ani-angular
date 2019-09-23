@@ -1,0 +1,18 @@
+.sidebar{
+    float: left;
+    border: 1px solid red;
+    width: 20%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.mainwrap{
+    height: 100%;
+    width: 100%;
+}
+
+.maincontent{
+    border: 1px solid blue;
+
+}
