@@ -24,8 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/styles.scss"
+              "src/style.scss",
+              "node_modules/@nebular/theme/styles/prebuilt/dark.css"
             ],
             "scripts": []
           },
@@ -121,6 +121,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "ani"
+    }
+  },
+  "defaultProject": "ani",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

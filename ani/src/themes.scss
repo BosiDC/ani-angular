@@ -1,0 +1,20 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/dark';
+
+$nb-themes: nb-register-theme((
+
+  // add your variables here like:
+  color-basic-100: white,
+  color-basic-200: #eefafc,
+  color-basic-300: #e8f5fa,
+  color-basic-400: #d6e6f2,
+  color-basic-500: #c7dbeb,
+  color-basic-600: #a9c0db,
+  color-basic-700: #9e4f5a,
+  color-basic-800: #773358,
+  color-basic-900: #662933,
+  color-basic-1000: #552426,
+  color-basic-1100: #121a2b,
+
+  background-basic-color-1: color-basic-700, // <- 800 by default
+), anii, dark);

@@ -1,14 +1,32 @@
-<app-header></app-header>
+<nb-layout>
+
+  <nb-layout-header fixed>
+  <!-- Insert header here -->
+  </nb-layout-header>
+
+  <nb-layout-column>
+
+    <app-header></app-header>
+ 
 
 <div class='mainwrap'>
-    <div class='sidebar'>
-        <h2> Anime Search </h2>
-        <form>
-          <input type="text" name="search" autocomplete="false">
-          <button type="submit">Submit</button>
-        </form>
+        <div class='sidebar'>
+            <h2> Anime Search </h2>
+            <form>
+              <input type="text" name="search" autocomplete="false">
+              <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class='maincontent'>
+          <h2> Current Popular Anime </h2>
+        </div>
     </div>
-    <div class='maincontent'>
-      <h2> Current Popular Anime </h2>
-    </div>
-</div>
+  
+    
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>
