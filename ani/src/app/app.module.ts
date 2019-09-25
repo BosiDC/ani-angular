@@ -29,7 +29,7 @@ import { appRouting } from './app-routing.module';
     HttpClientModule,
     NoopAnimationsModule,
     //nebular
-    NbThemeModule.forRoot({ name: 'dark' }),
+    NbThemeModule.forRoot({ name: 'anii' }),
     appRouting,
     NbSidebarModule.forRoot(),  
     NbButtonModule,
