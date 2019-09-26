@@ -4,22 +4,24 @@
 $nb-themes: nb-register-theme((
 
   // add your variables here like:
+  // changing these variables, changes what colors the themes will choose from.
   color-basic-100: white,
   color-basic-200: #eefafc,
   color-basic-300: #e8f5fa,
   color-basic-400: #d6e6f2,
   color-basic-500: #c7dbeb,
-  color-basic-600: #e4e3e3,
-  color-basic-700: #9e4f5a,
-  color-basic-800: #773358,
+  color-basic-600: #f3f2f2,
+  //color-basic-700: #9e4f5a,
+  //color-basic-800: #773358,
   color-basic-900: #5a5959,
   color-basic-1000: #383737,
   color-basic-1100: #121a2b,
 
-  //background-basic-color-1: color-basic-1000, // this changes the header and sidebar background colors
+  background-basic-color-1: color-basic-1100, // this changes the header and sidebar background colors
  // background-basic-color-2: color-basic-500, // not sure yet
   background-basic-color-3: color-basic-600, // should change the actual page background
  // background-basic-color-4: color-basic-100, // not sure yet
 
+  shadow: 0 0.15rem 0.35rem 0 #1a1f33//defualt: 0 0.5rem 1rem 0 #1a1f33
   //do text-basic-color-[N]: color-basic-xxx to change the color of the text etc.
 ), anii, dark);

@@ -11,9 +11,10 @@ import { templateJitUrl } from '@angular/compiler';
   template: `
 
   <nb-layout>
-  <nb-layout-header fixed>Anii</nb-layout-header>
+  <nb-layout-header fixed>
+    <img src="../assets/anii-wht.png" style="width: 120px;" >
 
-  <nb-sidebar>Anime Search</nb-sidebar>
+  </nb-layout-header>
 
   <nb-layout-column>
     Page Content <button nbButton>Hello World</button>
