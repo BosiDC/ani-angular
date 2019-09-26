@@ -10,7 +10,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 //nebular
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule, NbActionsModule, NbInputModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { appRouting } from './app-routing.module';
 
@@ -32,7 +32,9 @@ import { appRouting } from './app-routing.module';
     NbThemeModule.forRoot({ name: 'anii' }),
     appRouting,
     NbSidebarModule.forRoot(),  
+    NbActionsModule,
     NbButtonModule,
+    NbInputModule,
     NbLayoutModule,
     NbEvaIconsModule
   ],
