@@ -19,7 +19,9 @@ import {
   NbThemeModule,
   NbLayoutModule,
   NbSidebarModule,
-  NbButtonModule
+  NbButtonModule,
+  NbActionsModule,
+  NbInputModule
 } from "@nebular/theme";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { appRouting } from "./app-routing.module";
@@ -41,13 +43,15 @@ import { appRouting } from "./app-routing.module";
     HttpClientModule,
     FormsModule,
     //nebular
-    NbThemeModule.forRoot({ name: "anii" }),
+    NbThemeModule.forRoot({ name: "default" }),
     appRouting,
     NbSidebarModule.forRoot(),
     NbButtonModule,
     NbLayoutModule,
     NbEvaIconsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NbActionsModule,
+    NbInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
