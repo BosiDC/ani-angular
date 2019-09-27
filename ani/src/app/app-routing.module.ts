@@ -6,7 +6,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {{ path: '', component: ResultComponent },
-  { path: 'about', component: AboutComponent }, { path: 'profile', component: ProfileComponent }}
+  { path: 'about', component: AboutComponent }, { path: 'profile', component: ProfileComponent }
 ];
 
 export const appRouting = RouterModule.forRoot(routes);
