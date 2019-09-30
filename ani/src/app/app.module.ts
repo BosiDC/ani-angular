@@ -48,7 +48,7 @@ import { SidebarComponent } from "./components/sidebar/sidebar.component";
     HttpClientModule,
     FormsModule,
     //nebular
-    NbThemeModule.forRoot({ name: "default" }),
+    NbThemeModule.forRoot({ name: "anii" }),
     appRouting,
     NbSidebarModule.forRoot(),
     NbButtonModule,
