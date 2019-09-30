@@ -9,12 +9,20 @@ $nb-themes: nb-register-theme((
   color-basic-300: #e8f5fa,
   color-basic-400: #d6e6f2,
   color-basic-500: #c7dbeb,
-  color-basic-600: #a9c0db,
+  color-basic-600: #f3f2f2,
   color-basic-700: #9e4f5a,
-  color-basic-800: #773358,
-  color-basic-900: #662933,
-  color-basic-1000: #552426,
+  //color-basic-800: #773358,
+ // color-basic-900: #5a5959, //buttons use this color
+  color-basic-1000: #383737,
   color-basic-1100: #121a2b,
 
-  background-basic-color-1: color-basic-700, // <- 800 by default
+  background-basic-color-1: color-basic-1100, // this changes the header and sidebar background colors
+ background-basic-color-2: color-basic-1100, // so far changes the background color of buttons (default color-basic-900)
+  background-basic-color-3: color-basic-600, // should change the actual page background
+ // background-basic-color-4: color-basic-100, // not sure yet (default color-basic-1100)
+
+ shadow: 0 0.15rem 0.35rem 0 #1a1f33,//defualt: 0 0.5rem 1rem 0 #1a1f33
+ //do text-basic-color-[N]: color-basic-xxx to change the color of the text etc.
+
+ footer-height: 3.725rem //default: 4.725rem
 ), anii, dark);

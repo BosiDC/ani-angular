@@ -43,7 +43,7 @@ import { appRouting } from "./app-routing.module";
     HttpClientModule,
     FormsModule,
     //nebular
-    NbThemeModule.forRoot({ name: "default" }),
+    NbThemeModule.forRoot({ name: "anii" }),
     appRouting,
     NbSidebarModule.forRoot(),
     NbButtonModule,
