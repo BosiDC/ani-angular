@@ -21,8 +21,13 @@ $nb-themes: nb-register-theme((
   background-basic-color-3: color-basic-600, // should change the actual page background
  // background-basic-color-4: color-basic-100, // not sure yet (default color-basic-1100)
 
+ text-basic-color: #1a2138,
+ text-alternate-color: #ffff,
+
  shadow: 0 0.15rem 0.35rem 0 #1a1f33,//defualt: 0 0.5rem 1rem 0 #1a1f33
- //do text-basic-color-[N]: color-basic-xxx to change the color of the text etc.
+
+
+ 
 
  footer-height: 3.725rem //default: 4.725rem
 ), anii, dark);
