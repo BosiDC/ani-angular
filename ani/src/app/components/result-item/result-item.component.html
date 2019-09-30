@@ -1,5 +1,13 @@
-<div>
-    <p>
-        {{ result.title }}
-    </p>
-</div>
+<nb-card>
+  <nb-card-header>
+    {{ result.title }}
+  </nb-card-header>
+  <nb-card-body>
+    {{ result.type }}
+    {{ result.episodes }}
+    {{ result.score }}
+  </nb-card-body>
+  <nb-card-footer>
+    URL: <a href="{{ result.url }}">{{ result.url }}</a>
+  </nb-card-footer>
+</nb-card>

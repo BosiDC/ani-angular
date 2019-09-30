@@ -1,0 +1,12 @@
+# [START runtime]
+runtime: python27
+threadsafe: yes
+# [END runtime]
+
+handlers:
+  - url: /
+    static_files: dist/index.html
+    upload: dist/index.html
+
+  - url: /
+    static_dir: dist

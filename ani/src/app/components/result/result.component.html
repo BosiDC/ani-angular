@@ -1,6 +1,3 @@
-<app-search></app-search>
-<h1>Top Airing</h1>
-<app-result-item
-  *ngFor="let result of results | slice: 0:10"
-  [result]="result"
-></app-result-item>
+<h1>Current Top Airing</h1>
+<app-result-item *ngFor="let result of results | slice: 0:10" [result]="result">
+</app-result-item>

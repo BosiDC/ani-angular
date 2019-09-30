@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Router } from "@angular/router";
 import { templateJitUrl } from "@angular/compiler";
 
 @Component({
@@ -8,5 +9,9 @@ import { templateJitUrl } from "@angular/compiler";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
+  constructor(private router: Router) {}
   title = "ani";
+  isHomeRoute() {
+    return this.router.url === "/";
+  }
 }

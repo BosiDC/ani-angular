@@ -21,10 +21,14 @@ import {
   NbSidebarModule,
   NbButtonModule,
   NbActionsModule,
-  NbInputModule
+  NbInputModule,
+  NbCheckboxModule,
+  NbCardModule,
+  NbSelectModule
 } from "@nebular/theme";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { appRouting } from "./app-routing.module";
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
 
 @NgModule({
   declarations: [
@@ -35,7 +39,8 @@ import { appRouting } from "./app-routing.module";
     ResultComponent,
     AboutComponent,
     ResultItemComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,10 @@ import { appRouting } from "./app-routing.module";
     NbEvaIconsModule,
     BrowserAnimationsModule,
     NbActionsModule,
-    NbInputModule
+    NbInputModule,
+    NbCheckboxModule,
+    NbSelectModule,
+    NbCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
