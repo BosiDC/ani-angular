@@ -8,31 +8,59 @@
     (keyup)="onNameKeyUp($event)"
   />
   <p>Filters</p>
-  <nb-select placeholder="Select Type">
-    <nb-option value="">Any</nb-option>
-    <nb-option value="0">TV</nb-option>
-    <nb-option value="1">OVA</nb-option>
-    <nb-option value="2">Movie</nb-option>
-    <nb-option value="3">Special</nb-option>
-    <nb-option value="4">Ona</nb-option>
-    <nb-option value="5">Music</nb-option>
-  </nb-select>
-  <nb-select placeholder="Select Status">
-    <nb-option value="">Any</nb-option>
-    <nb-option value="0">Airing</nb-option>
-    <nb-option value="1">Completed</nb-option>
-    <nb-option value="2">To be aired</nb-option>
-    <nb-option value="3">TBA</nb-option>
-    <nb-option value="4">Upcoming</nb-option>
-  </nb-select>
-  <nb-select placeholder="Select Rating">
-    <nb-option value="">Any</nb-option>
-    <nb-option value="0">G</nb-option>
-    <nb-option value="1">PG</nb-option>
-    <nb-option value="2">PG-13</nb-option>
-    <nb-option value="3">R</nb-option>
-    <nb-option value="4">R+</nb-option>
-    <nb-option value="5">Rx</nb-option>
-  </nb-select>
+  <div class="space space-component">
+    <nb-select placeholder="Sort By">
+      <nb-option value="">No Sort</nb-option>
+      <nb-option value="">Title</nb-option>
+      <nb-option value="">Score</nb-option>
+    </nb-select>
+  </div>
+
+  <div class="space space-component">
+    <nb-select placeholder="Select Type">
+      <nb-option value="">Any</nb-option>
+      <nb-option value="0">TV</nb-option>
+      <nb-option value="1">OVA</nb-option>
+      <nb-option value="2">Movie</nb-option>
+      <nb-option value="3">Special</nb-option>
+      <nb-option value="4">Ona</nb-option>
+      <nb-option value="5">Music</nb-option>
+    </nb-select>
+  </div>
+
+  <div class="space space-component">
+    <nb-select placeholder="Select Status">
+      <nb-option value="">Any</nb-option>
+      <nb-option value="0">Airing</nb-option>
+      <nb-option value="1">Completed</nb-option>
+      <nb-option value="2">To be aired</nb-option>
+      <nb-option value="3">TBA</nb-option>
+      <nb-option value="4">Upcoming</nb-option>
+    </nb-select>
+  </div>
+
+  <div class="space space-component">
+    <nb-select placeholder="Select Rating">
+      <nb-option value="">Any</nb-option>
+      <nb-option value="0">G</nb-option>
+      <nb-option value="1">PG</nb-option>
+      <nb-option value="2">PG-13</nb-option>
+      <nb-option value="3">R</nb-option>
+      <nb-option value="4">R+</nb-option>
+      <nb-option value="5">Rx</nb-option>
+    </nb-select>
+  </div>
+
+  <div class="space space-component">
+    <nb-select placeholder="Select Genre">
+      <nb-option value="">Any</nb-option>
+      <nb-option value="1">Action</nb-option>
+      <nb-option value="2">Adventure</nb-option>
+      <nb-option value="3">Cars</nb-option>
+      <nb-option value="4">Comedy</nb-option>
+      <nb-option value="5">Dementia</nb-option>
+      <nb-option value="6">Demons</nb-option>
+    </nb-select>
+  </div>
   <button nbButton (click)="onSubmit()">Search</button>
 </form>
