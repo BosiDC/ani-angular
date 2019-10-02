@@ -10,7 +10,7 @@
   />
   <p>Filters</p>
   <nb-checkbox></nb-checkbox>
-  <nb-select placeholder="Select Type">
+  <nb-select placeholder="Select Type" style="padding-bottom: 10px;">
     <nb-option value="">Any</nb-option>
     <nb-option value="0">TV</nb-option>
     <nb-option value="1">OVA</nb-option>
@@ -19,15 +19,15 @@
     <nb-option value="4">Ona</nb-option>
     <nb-option value="5">Music</nb-option>
   </nb-select>
-  <nb-select placeholder="Select Status">
+  <nb-select placeholder="Select Status"style="padding-bottom: 10px;">
     <nb-option value="">Any</nb-option>
     <nb-option value="0">Airing</nb-option>
     <nb-option value="1">Completed</nb-option>
     <nb-option value="2">To be aired</nb-option>
     <nb-option value="3">TBA</nb-option>
     <nb-option value="4">Upcoming</nb-option>
-  </nb-select>
-  <nb-select placeholder="Select Rating">
+  </nb-select>  
+  <nb-select placeholder="Select Rating" style="padding-bottom: 10px;">
     <nb-option value="">Any</nb-option>
     <nb-option value="0">G</nb-option>
     <nb-option value="1">PG</nb-option>
@@ -36,5 +36,5 @@
     <nb-option value="4">R+</nb-option>
     <nb-option value="5">Rx</nb-option>
   </nb-select>
-  <button nbButton>Search</button>
+  <button nbButton status="danger" size="small">Search</button>
 </form>
