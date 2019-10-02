@@ -30,6 +30,7 @@ import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { appRouting } from "./app-routing.module";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { SearchItemComponent } from "./Components/search-item/search-item.component";
+import { CurrentItemComponent } from './components/current-item/current-item.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SearchItemComponent } from "./Components/search-item/search-item.compon
     ResultItemComponent,
     FooterComponent,
     SidebarComponent,
-    SearchItemComponent
+    SearchItemComponent,
+    CurrentItemComponent
   ],
   imports: [
     BrowserModule,
