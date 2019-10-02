@@ -24,7 +24,9 @@ import {
   NbInputModule,
   NbCheckboxModule,
   NbCardModule,
-  NbSelectModule
+  NbSelectModule,
+  NbUserModule,
+  NbTabsetModule
 } from "@nebular/theme";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { appRouting } from "./app-routing.module";
@@ -63,7 +65,9 @@ import { CurrentItemComponent } from './components/current-item/current-item.com
     NbInputModule,
     NbCheckboxModule,
     NbSelectModule,
-    NbCardModule
+    NbCardModule,
+    NbUserModule,
+    NbTabsetModule
   ],
   providers: [],
   bootstrap: [AppComponent]
