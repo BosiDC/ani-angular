@@ -1,0 +1,20 @@
+<td style="width: 340px; border-spacing: 50px;">
+  <nb-card accent="info">
+    <nb-card-header>
+      <div>
+        <div style="float: left; width: 265px;">
+          {{ current.title }}
+        </div>
+      </div>
+    </nb-card-header>
+    <nb-card-body>
+      <img class="result-image" src="{{ current.image_url }}" />
+      <!-- img size is 225 x 318-->
+    </nb-card-body>
+    <nb-card-footer>
+      Type: {{ current.type }} <br />
+      Episodes: {{ current.episodes }} <br />
+      URL: <a href="{{ current.url }}">MyAnimeList (MAL)</a>
+    </nb-card-footer>
+  </nb-card>
+</td>
