@@ -1,7 +1,13 @@
 <form>
-  <input type="text" size="18" nbInput placeholder="Search e.g. Pokemon" />
+  <p>Name</p>
+  <input
+    type="text"
+    size="18"
+    nbInput
+    placeholder="Search e.g. Pokemon"
+    (keyup)="onNameKeyUp($event)"
+  />
   <p>Filters</p>
-  <nb-checkbox></nb-checkbox>
   <nb-select placeholder="Select Type">
     <nb-option value="">Any</nb-option>
     <nb-option value="0">TV</nb-option>
@@ -28,5 +34,5 @@
     <nb-option value="4">R+</nb-option>
     <nb-option value="5">Rx</nb-option>
   </nb-select>
-  <button nbButton>Search</button>
+  <button nbButton (click)="onSubmit()">Search</button>
 </form>
