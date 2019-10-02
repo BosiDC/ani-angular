@@ -1,3 +1,8 @@
 <h1>Current Top Airing</h1>
-<app-result-item *ngFor="let result of results | slice: 0:10" [result]="result">
-</app-result-item>
+
+<table style="width: 100%;">
+    <tr>
+        <app-result-item *ngFor="let result of results | slice: 0:10" [result]="result" style="padding-right: 15px;">
+        </app-result-item>
+    </tr>
+</table>
