@@ -27,6 +27,5 @@ export class SidebarComponent implements OnInit {
   }
   update() {
     this.resultService.changeMessage(this.searchs);
-    console.log("success", this.searchs);
   }
 }
