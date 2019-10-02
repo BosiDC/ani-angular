@@ -11,7 +11,7 @@ import { templateJitUrl } from "@angular/compiler";
 export class AppComponent {
   constructor(private router: Router) {}
   title = "ani";
-  isHomeRoute() {
-    return this.router.url === "/";
+  isSearchRoute() {
+    return this.router.url === "/search";
   }
 }

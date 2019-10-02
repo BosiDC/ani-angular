@@ -3,11 +3,13 @@ import { Routes, RouterModule } from "@angular/router";
 import { ResultComponent } from "./components/result/result.component";
 import { AboutComponent } from "./pages/about/about.component";
 import { ProfileComponent } from "./components/profile/profile.component";
+import { SearchComponent } from "./components/search/search.component";
 
 const routes: Routes = [
   { path: "", component: ResultComponent },
   { path: "about", component: AboutComponent },
-  { path: "profile", component: ProfileComponent }
+  { path: "profile", component: ProfileComponent },
+  { path: "search", component: SearchComponent }
 ];
 
 export const appRouting = RouterModule.forRoot(routes);
