@@ -1,19 +1,23 @@
-
-<header>
-    <div class='header'>
-      <div>
-          <div class='title-banner'>
-                <a class='logotitle' routerLink='/'>anii</a>
-                  <nav>
-                      <ul>
-                            <li><button class='head-but'>Click me!</button> </li>
-                            <li><button class='head-but'>Click me!</button> </li>
-                          <li> <a routerLink='/login'>Login</a></li>
-                          <li> <a routerLink="/profile">Profile</a></li>
-                          <li> <a routerLink="/about">About</a></li>
-                      </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-  </header>
+<nb-layout-header fixed>
+  <img routerLink="/" src="../assets/anii-wht.png" style="width: 120px;" />
+  <nb-actions size="medium">
+    <nb-action routerLink="/profile" style="color: #ffffff;">Profile</nb-action>
+    <nb-action routerLink="/search" style="color: #ffffff;">Browse</nb-action>
+    <nb-action routerLink="/about" style="color: #ffffff;">About</nb-action>
+    <nb-action>
+      <button nbButton outline status="info" size="small" routerLink="/">
+        Login
+      </button>
+    </nb-action>
+  </nb-actions>
+  <form>
+    <input
+      type="text"
+      nbInput
+      status="info"
+      placeholder="Search e.g Kimetsu No Yaiba"
+      fieldSize="small"
+      shape="round"
+    />
+  </form>
+</nb-layout-header>

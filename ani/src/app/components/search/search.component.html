@@ -1,1 +1,10 @@
-<p>search works!</p>
+<table style="width: 100%;">
+  <tr>
+    <app-search-item
+      *ngFor="let search of searchs"
+      [search]="search"
+      style="padding-right: 15px;"
+    >
+    </app-search-item>
+  </tr>
+</table>

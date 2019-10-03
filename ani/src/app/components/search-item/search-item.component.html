@@ -1,0 +1,24 @@
+<td style="width: 350px; border-spacing: 50px;">
+  <nb-card accent="info">
+    <nb-card-header>
+      <div>
+        <div style="float: left; width: 265px;">
+          {{ search.title }}
+        </div>
+        <div style="float: right; color: #00d68f">
+          {{ search.score }}
+        </div>
+      </div>
+    </nb-card-header>
+    <nb-card-body>
+      <img class="result-image" src="{{ search.image_url }}" />
+      <!-- img size is 225 x 318-->
+    </nb-card-body>
+    <nb-card-footer>
+      Type: {{ search.type }} <br />
+      Episodes: {{ search.episodes }} <br />
+      Rating: {{ search.rated }} <br />
+      URL: <a href="{{ search.url }}">MyAnimeList (MAL)</a>
+    </nb-card-footer>
+  </nb-card>
+</td>

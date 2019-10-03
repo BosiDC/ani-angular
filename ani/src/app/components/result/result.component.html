@@ -1,0 +1,23 @@
+<h1>Current Season</h1>
+<table style="width: 100%;">
+  <tr>
+    <app-current-item
+      *ngFor="let current of currents | slice: 0:8"
+      [current]="current"
+      style="padding-right: 15px;"
+    >
+    </app-current-item>
+  </tr>
+</table>
+
+<h1>Current Top Airing</h1>
+<table style="width: 100%;">
+  <tr>
+    <app-result-item
+      *ngFor="let result of results | slice: 0:6"
+      [result]="result"
+      style="padding-right: 15px;"
+    >
+    </app-result-item>
+  </tr>
+</table>
