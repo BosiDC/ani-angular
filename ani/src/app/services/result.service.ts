@@ -20,8 +20,28 @@ export class ResultService {
   getTop(): Observable<Top[]> {
     return this.http.get<Top[]>(this.topURL + "airing");
   }
-  getSearch(name: string): Observable<Search[]> {
-    return this.http.get<Search[]>(this.searchURL + name);
+  getSearch(
+    name: string,
+    order: string,
+    type: string,
+    status: string,
+    rating: string,
+    genre: string
+  ): Observable<Search[]> {
+    return this.http.get<Search[]>(
+      this.searchURL +
+        name +
+        "&order_by=" +
+        order +
+        "&type=" +
+        type +
+        "&status=" +
+        status +
+        "&rated=" +
+        rating +
+        "&genre=" +
+        genre
+    );
   }
   getCurrent(): Observable<Current[]> {
     return this.http.get<Current[]>(this.currentURL);
