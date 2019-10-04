@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
+import { RouterModule } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
 import { HeaderComponent } from "./layout/header/header.component";
@@ -77,20 +78,29 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
     NbCardModule,
     NbUserModule,
     NbTabsetModule,
-    NgxAuthFirebaseUIModule.forRoot({
-      apiKey: "AIzaSyD-WnXsJ6CAR6B4BbpxIXfmBeRE5cEiddc",
-      authDomain: "anii-420.firebaseapp.com",
-      databaseURL: "https://anii-420.firebaseio.com",
-      projectId: "anii-420",
-      storageBucket: "anii-420.appspot.com",
-      messagingSenderId: "10244473983",
-      appId: "1:10244473983:web:842f9903f631eb40276b4a",
-      measurementId: "G-JMJKXCWJK0"
-    }),
+    NgxAuthFirebaseUIModule.forRoot(
+      {
+        apiKey: "AIzaSyD-WnXsJ6CAR6B4BbpxIXfmBeRE5cEiddc",
+        authDomain: "anii-420.firebaseapp.com",
+        databaseURL: "https://anii-420.firebaseio.com",
+        projectId: "anii-420",
+        storageBucket: "anii-420.appspot.com",
+        messagingSenderId: "10244473983",
+        appId: "1:10244473983:web:842f9903f631eb40276b4a",
+        measurementId: "G-JMJKXCWJK0"
+      },
+      () => "anii",
+      {
+        authGuardFallbackURL: "/login",
+        authGuardLoggedInURL: "/profle"
+      }
+    ),
+
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
