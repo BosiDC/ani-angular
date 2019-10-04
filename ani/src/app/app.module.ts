@@ -34,6 +34,7 @@ import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { SearchItemComponent } from "./components/search-item/search-item.component";
 import { CurrentItemComponent } from "./components/current-item/current-item.component";
 import { LoginComponent } from "./pages/login/login.component";
+import { NgxAuthFirebaseUIModule } from "ngx-auth-firebaseui";
 
 @NgModule({
   declarations: [
@@ -69,7 +70,17 @@ import { LoginComponent } from "./pages/login/login.component";
     NbSelectModule,
     NbCardModule,
     NbUserModule,
-    NbTabsetModule
+    NbTabsetModule,
+    NgxAuthFirebaseUIModule.forRoot({
+      apiKey: "AIzaSyD-WnXsJ6CAR6B4BbpxIXfmBeRE5cEiddc",
+      authDomain: "anii-420.firebaseapp.com",
+      databaseURL: "https://anii-420.firebaseio.com",
+      projectId: "anii-420",
+      storageBucket: "anii-420.appspot.com",
+      messagingSenderId: "10244473983",
+      appId: "1:10244473983:web:842f9903f631eb40276b4a",
+      measurementId: "G-JMJKXCWJK0"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
