@@ -28,6 +28,7 @@ import {
   NbUserModule,
   NbTabsetModule
 } from "@nebular/theme";
+
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { appRouting } from "./app-routing.module";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
@@ -35,6 +36,11 @@ import { SearchItemComponent } from "./components/search-item/search-item.compon
 import { CurrentItemComponent } from "./components/current-item/current-item.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { NgxAuthFirebaseUIModule } from "ngx-auth-firebaseui";
+import { AngularFireModule } from "@angular/fire";
+import { environment } from "../environments/environment";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import { AngularFireAuthModule } from "@angular/fire/auth";
 
 @NgModule({
   declarations: [
@@ -80,7 +86,11 @@ import { NgxAuthFirebaseUIModule } from "ngx-auth-firebaseui";
       messagingSenderId: "10244473983",
       appId: "1:10244473983:web:842f9903f631eb40276b4a",
       measurementId: "G-JMJKXCWJK0"
-    })
+    }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
