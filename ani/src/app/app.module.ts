@@ -33,6 +33,7 @@ import { appRouting } from "./app-routing.module";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { SearchItemComponent } from "./components/search-item/search-item.component";
 import { CurrentItemComponent } from "./components/current-item/current-item.component";
+import { LoginComponent } from "./pages/login/login.component";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { CurrentItemComponent } from "./components/current-item/current-item.com
     FooterComponent,
     SidebarComponent,
     SearchItemComponent,
-    CurrentItemComponent
+    CurrentItemComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

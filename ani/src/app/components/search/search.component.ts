@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Search } from "../../models/Anime";
 import { ResultService } from "../../services/result.service";
 
