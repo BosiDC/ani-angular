@@ -95,6 +95,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {}
 
+  //searches animes
   onSubmit() {
     this.resultService
       .getSearch(
@@ -112,9 +113,13 @@ export class SidebarComponent implements OnInit {
       });
     this.update();
   }
+
+  //update name for search
   onNameKeyUp(event: any) {
     this.name = event.target.value;
   }
+
+  //update the message for other componenets to see search results
   update() {
     this.resultService.changeMessage(this.searchs);
     console.log("success", this.searchs);

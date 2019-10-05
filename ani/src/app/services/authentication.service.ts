@@ -38,6 +38,7 @@ export class AuthenticationService {
     );
   }
 
+  //log user off
   signOut() {
     return this.afAuth.auth.signOut().then(() => {
       this.router.navigate(["/"]);
