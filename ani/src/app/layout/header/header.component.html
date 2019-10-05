@@ -16,6 +16,8 @@
       shape="round"
     />
   </form>
+
+  <!--If user is logged on-->
   <nb-actions size="medium" *ngIf="auth.users$ | async as user; else login">
     <nb-action>
       <button nbButton outline size="small" (click)="auth.signOut()">
@@ -23,6 +25,8 @@
       </button>
     </nb-action>
   </nb-actions>
+
+  <!--If user is not logged on-->
   <ng-template #login>
     <nb-actions size="medium">
       <nb-action>
