@@ -1,14 +1,10 @@
 <nb-layout-header fixed>
   <img routerLink="/" src="../assets/anii-wht.png" style="width: 120px;" />
   <nb-actions size="medium">
+    <nb-action routerLink="/" icon="home-outline"></nb-action>
     <nb-action routerLink="/profile" style="color: #ffffff;">Profile</nb-action>
     <nb-action routerLink="/search" style="color: #ffffff;">Browse</nb-action>
     <nb-action routerLink="/about" style="color: #ffffff;">About</nb-action>
-    <nb-action>
-      <button nbButton outline status="info" size="small" routerLink="/">
-        Login
-      </button>
-    </nb-action>
   </nb-actions>
   <form>
     <input
@@ -20,4 +16,36 @@
       shape="round"
     />
   </form>
+
+  <!--If user is logged on-->
+  <nb-actions size="medium" *ngIf="auth.users$ | async as user; else login">
+    <nb-action>
+      <button
+        nbButton
+        outline
+        size="small"
+        status="danger"
+        (click)="auth.signOut()"
+      >
+        Sign Out
+      </button>
+    </nb-action>
+  </nb-actions>
+
+  <!--If user is not logged on-->
+  <ng-template #login>
+    <nb-actions size="medium">
+      <nb-action>
+        <button
+          nbButton
+          outline
+          size="small"
+          status="success"
+          routerLink="/login"
+        >
+          Sign In
+        </button>
+      </nb-action>
+    </nb-actions>
+  </ng-template>
 </nb-layout-header>

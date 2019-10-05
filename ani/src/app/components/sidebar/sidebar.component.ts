@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Search } from "../../models/Anime";
 import { Sort, Type, Status, Rating, Genre } from "../../models/Select";
 import { ResultService } from "../../services/result.service";
@@ -16,7 +16,7 @@ export class SidebarComponent implements OnInit {
     { value: "score", viewValue: "Score" }
   ];
   types: Type[] = [
-    { value: "", viewValue: "Any" },
+    { value: "", viewValue: "Any Type" },
     { value: "tv", viewValue: "TV" },
     { value: "ova", viewValue: "OVA" },
     { value: "special", viewValue: "Special" },
@@ -24,13 +24,13 @@ export class SidebarComponent implements OnInit {
     { value: "music", viewValue: "Music" }
   ];
   statuses: Status[] = [
-    { value: "", viewValue: "Any" },
+    { value: "", viewValue: "Any Status" },
     { value: "airing", viewValue: "Airing" },
     { value: "completed", viewValue: "Completed" },
     { value: "to_be_aired", viewValue: "Upcoming" }
   ];
   ratings: Rating[] = [
-    { value: "", viewValue: "Any" },
+    { value: "", viewValue: "Any Rating" },
     { value: "g", viewValue: "G" },
     { value: "pg", viewValue: "PG" },
     { value: "pg13", viewValue: "PG-13" },
@@ -39,7 +39,7 @@ export class SidebarComponent implements OnInit {
     { value: "rx", viewValue: "Rx" }
   ];
   genres: Genre[] = [
-    { value: "", viewValue: "Any" },
+    { value: "", viewValue: "Any Genre" },
     { value: "1", viewValue: "Action" },
     { value: "2", viewValue: "Adventure" },
     { value: "3", viewValue: "Cars" },
@@ -51,7 +51,6 @@ export class SidebarComponent implements OnInit {
     { value: "9", viewValue: "Ecchi" },
     { value: "10", viewValue: "Fantasy" },
     { value: "11", viewValue: "Game" },
-    { value: "12", viewValue: "Hentai" },
     { value: "13", viewValue: "Historical" },
     { value: "14", viewValue: "Horror" },
     { value: "15", viewValue: "Kids" },
@@ -82,7 +81,8 @@ export class SidebarComponent implements OnInit {
     { value: "40", viewValue: "Psychological" },
     { value: "41", viewValue: "Thriller" },
     { value: "42", viewValue: "Seinen" },
-    { value: "43", viewValue: "Josei" }
+    { value: "43", viewValue: "Josei" },
+    { value: "12", viewValue: "Hentai" }
   ];
   name: string;
   selectedSort: string;
@@ -95,6 +95,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {}
 
+  //searches animes
   onSubmit() {
     this.resultService
       .getSearch(
@@ -108,13 +109,19 @@ export class SidebarComponent implements OnInit {
       .subscribe(results => {
         this.searchs = results["results"];
         this.update();
+        console.log("success", results);
       });
     this.update();
   }
+
+  //update name for search
   onNameKeyUp(event: any) {
     this.name = event.target.value;
   }
+
+  //update the message for other componenets to see search results
   update() {
     this.resultService.changeMessage(this.searchs);
+    console.log("success", this.searchs);
   }
 }

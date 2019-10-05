@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Search } from "../../models/Anime";
 import { ResultService } from "../../services/result.service";
 
@@ -12,6 +12,7 @@ export class SearchComponent implements OnInit {
 
   constructor(private resultService: ResultService) {}
 
+  //subscribe to the JSON object
   ngOnInit() {
     this.resultService.currentMessage.subscribe(
       message => (this.searchs = message)

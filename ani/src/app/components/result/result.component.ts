@@ -13,6 +13,7 @@ export class ResultComponent implements OnInit {
 
   constructor(private resultService: ResultService) {}
 
+  //subscribe to the JSON object
   ngOnInit() {
     this.resultService.getTop().subscribe(results => {
       this.results = results["top"];

@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
+import { RouterModule } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
 import { HeaderComponent } from "./layout/header/header.component";
@@ -26,13 +27,23 @@ import {
   NbCardModule,
   NbSelectModule,
   NbUserModule,
+  NbToggleModule,
   NbTabsetModule
 } from "@nebular/theme";
+
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { appRouting } from "./app-routing.module";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { SearchItemComponent } from "./components/search-item/search-item.component";
 import { CurrentItemComponent } from "./components/current-item/current-item.component";
+import { LoginComponent } from "./pages/login/login.component";
+import { NgxAuthFirebaseUIModule } from "ngx-auth-firebaseui";
+import { AngularFireModule } from "@angular/fire";
+import { environment } from "../environments/environment";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { FavouriteItemComponent } from "./components/favourite-item/favourite-item.component";
 
 @NgModule({
   declarations: [
@@ -46,7 +57,9 @@ import { CurrentItemComponent } from "./components/current-item/current-item.com
     FooterComponent,
     SidebarComponent,
     SearchItemComponent,
-    CurrentItemComponent
+    CurrentItemComponent,
+    LoginComponent,
+    FavouriteItemComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +80,31 @@ import { CurrentItemComponent } from "./components/current-item/current-item.com
     NbSelectModule,
     NbCardModule,
     NbUserModule,
-    NbTabsetModule
+    NbToggleModule,
+    NbTabsetModule,
+    NgxAuthFirebaseUIModule.forRoot(
+      {
+        apiKey: "AIzaSyD-WnXsJ6CAR6B4BbpxIXfmBeRE5cEiddc",
+        authDomain: "anii-420.firebaseapp.com",
+        databaseURL: "https://anii-420.firebaseio.com",
+        projectId: "anii-420",
+        storageBucket: "anii-420.appspot.com",
+        messagingSenderId: "10244473983",
+        appId: "1:10244473983:web:842f9903f631eb40276b4a",
+        measurementId: "G-JMJKXCWJK0"
+      },
+      () => "anii",
+      {
+        authGuardFallbackURL: "/login",
+        authGuardLoggedInURL: "/profle"
+      }
+    ),
+
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
