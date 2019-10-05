@@ -2,7 +2,7 @@
   <nb-card accent="info">
     <nb-card-header>
       <div>
-        <div style="float: left; width: 265px;">
+        <div class="titleText" style="float: left; width: 265px;">
           {{ current.title }}
         </div>
       </div>
@@ -12,12 +12,12 @@
       <!-- img size is 225 x 318-->
     </nb-card-body>
     <nb-card-footer>
-      <nb-toggle labelPosition="start" style="float:right">Fave</nb-toggle>
-      <p>
-        Type: {{ current.type }} <br />
-        Episodes: {{ current.episodes }} <br />
-        URL: <a href="{{ current.url }}">MyAnimeList (MAL)</a>
-      </p>
+      <nb-toggle labelPosition="start" status="success" style="float:right"
+        >Fave</nb-toggle
+      >
+      Type: {{ current.type }} <br />
+      Episodes: {{ current.episodes }} <br />
+      URL: <a href="{{ current.url }}">MyAnimeList (MAL)</a>
     </nb-card-footer>
   </nb-card>
 </td>

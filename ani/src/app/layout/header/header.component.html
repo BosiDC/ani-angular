@@ -20,7 +20,13 @@
   <!--If user is logged on-->
   <nb-actions size="medium" *ngIf="auth.users$ | async as user; else login">
     <nb-action>
-      <button nbButton outline size="small" (click)="auth.signOut()">
+      <button
+        nbButton
+        outline
+        size="small"
+        status="danger"
+        (click)="auth.signOut()"
+      >
         Sign Out
       </button>
     </nb-action>
@@ -30,7 +36,13 @@
   <ng-template #login>
     <nb-actions size="medium">
       <nb-action>
-        <button nbButton outline size="small" routerLink="/login">
+        <button
+          nbButton
+          outline
+          size="small"
+          status="success"
+          routerLink="/login"
+        >
           Sign In
         </button>
       </nb-action>
