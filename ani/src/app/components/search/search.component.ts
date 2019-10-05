@@ -12,6 +12,7 @@ export class SearchComponent implements OnInit {
 
   constructor(private resultService: ResultService) {}
 
+  //subscribe to the JSON object
   ngOnInit() {
     this.resultService.currentMessage.subscribe(
       message => (this.searchs = message)
