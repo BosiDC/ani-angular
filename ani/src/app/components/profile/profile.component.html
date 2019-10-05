@@ -4,19 +4,17 @@
       <nb-tab tabTitle="Overview">
         <nb-card
           style="width: 40%; border: solid 1px #1a1f33; box-shadow: none;"
+          *ngIf="auth.users$ | async as user"
         >
           <nb-card-header>
-            <nb-user name="John Doe" title="Engineer"></nb-user>
+            <nb-user
+              name="{{ user.displayName }}"
+              picture="{{ user.photoURL }}"
+            ></nb-user>
           </nb-card-header>
           <nb-card-body>
-            Profile Description gogogogogo
-          </nb-card-body>
-        </nb-card>
-        <nb-card
-          style="width: 40%; border: solid 1px #1a1f33; box-shadow: none;"
-        >
-          <nb-card-body>
-            My Shows
+            Email: {{ user.email }}
+            <p>Description: {{ user?.description }}</p>
           </nb-card-body>
         </nb-card>
       </nb-tab>
@@ -24,18 +22,8 @@
         Stats can place a router here to another page
       </nb-tab>
       <nb-tab tabTitle="Favourites">
-        Favourites can place a router here to another page
+        <app-favourite-item></app-favourite-item>
       </nb-tab>
-      <div style="float: right; padding-right: 10px;">
-        <nb-user
-          size="medium"
-          name="Joseph Joestar"
-          title="Stand User"
-          [showTitle]=""
-        >
-        </nb-user>
-      </div>
     </nb-tabset>
   </div>
-  <nb-card-body> </nb-card-body>
 </nb-card>

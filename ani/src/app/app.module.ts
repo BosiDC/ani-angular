@@ -27,6 +27,7 @@ import {
   NbCardModule,
   NbSelectModule,
   NbUserModule,
+  NbToggleModule,
   NbTabsetModule
 } from "@nebular/theme";
 
@@ -42,6 +43,7 @@ import { environment } from "../environments/environment";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { FavouriteItemComponent } from "./components/favourite-item/favourite-item.component";
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
     SidebarComponent,
     SearchItemComponent,
     CurrentItemComponent,
-    LoginComponent
+    LoginComponent,
+    FavouriteItemComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +80,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
     NbSelectModule,
     NbCardModule,
     NbUserModule,
+    NbToggleModule,
     NbTabsetModule,
     NgxAuthFirebaseUIModule.forRoot(
       {

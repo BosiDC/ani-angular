@@ -12,9 +12,12 @@
       <!-- img size is 225 x 318-->
     </nb-card-body>
     <nb-card-footer>
-      Type: {{ current.type }} <br />
-      Episodes: {{ current.episodes }} <br />
-      URL: <a href="{{ current.url }}">MyAnimeList (MAL)</a>
+      <nb-toggle labelPosition="start" style="float:right">Fave</nb-toggle>
+      <p>
+        Type: {{ current.type }} <br />
+        Episodes: {{ current.episodes }} <br />
+        URL: <a href="{{ current.url }}">MyAnimeList (MAL)</a>
+      </p>
     </nb-card-footer>
   </nb-card>
 </td>
