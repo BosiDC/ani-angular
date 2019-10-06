@@ -26,6 +26,7 @@ import {
   NbCardModule,
   NbSelectModule,
   NbUserModule,
+  NbToggleModule,
   NbTabsetModule
 } from "@nebular/theme";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
@@ -67,6 +68,7 @@ import { CurrentItemComponent } from "./components/current-item/current-item.com
     NbSelectModule,
     NbCardModule,
     NbUserModule,
+    NbToggleModule,
     NbTabsetModule
   ],
   providers: [],
