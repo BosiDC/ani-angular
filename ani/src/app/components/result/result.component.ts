@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Top, Current } from "../../models/Anime";
 import { ResultService } from "../../services/result.service";
+import { FaveService } from "src/app/services/fave.service";
 
 @Component({
   selector: "app-result",
@@ -11,7 +12,7 @@ export class ResultComponent implements OnInit {
   results: Top[];
   currents: Current[];
 
-  constructor(private resultService: ResultService) {}
+  constructor(private resultService: ResultService, private db: FaveService) {}
 
   //subscribe to the JSON object
   ngOnInit() {

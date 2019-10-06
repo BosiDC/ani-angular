@@ -93,7 +93,7 @@ import { FavouriteItemComponent } from "./components/favourite-item/favourite-it
         appId: "1:10244473983:web:842f9903f631eb40276b4a",
         measurementId: "G-JMJKXCWJK0"
       },
-      () => "anii",
+      null,
       {
         authGuardFallbackURL: "/login",
         authGuardLoggedInURL: "/profle"

@@ -12,7 +12,12 @@
       <!-- img size is 225 x 318-->
     </nb-card-body>
     <nb-card-footer>
-      <nb-toggle labelPosition="start" status="success" style="float:right"
+      <nb-toggle
+        labelPosition="start"
+        [(checked)]="checked"
+        status="success"
+        style="float:right"
+        (checkedChange)="toggle()"
         >Fave</nb-toggle
       >
       Type: {{ current.type }} <br />
