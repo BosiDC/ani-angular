@@ -81,9 +81,6 @@ import { FavouriteItemComponent } from "./components/favourite-item/favourite-it
     NbCardModule,
     NbUserModule,
     NbToggleModule,
-<<<<<<< HEAD
-    NbTabsetModule
-=======
     NbTabsetModule,
     NgxAuthFirebaseUIModule.forRoot(
       {
@@ -108,7 +105,6 @@ import { FavouriteItemComponent } from "./components/favourite-item/favourite-it
     AngularFireAuthModule,
     AngularFireStorageModule,
     RouterModule
->>>>>>> d585dd92878aa7956f4fe19b5f910510d1041e08
   ],
   providers: [],
   bootstrap: [AppComponent]
