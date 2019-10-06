@@ -17,9 +17,12 @@ export class ResultService {
   private messageSource = new BehaviorSubject<Search[]>(null);
   currentMessage = this.messageSource.asObservable();
 
+  //get the top airing animes
   getTop(): Observable<Top[]> {
     return this.http.get<Top[]>(this.topURL + "airing");
   }
+
+  //search anime function
   getSearch(
     name: string,
     order: string,
@@ -43,10 +46,13 @@ export class ResultService {
         genre
     );
   }
+
+  //get the current season of animes
   getCurrent(): Observable<Current[]> {
     return this.http.get<Current[]>(this.currentURL);
   }
 
+  //allows communication between different componenets
   changeMessage(message: Search[]) {
     this.messageSource.next(message);
   }
