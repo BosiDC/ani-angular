@@ -30,7 +30,7 @@ export class AuthenticationService {
     this.users$ = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
-          return this.afs.doc<any>(`users/${user.uid}`).valueChanges();
+          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
           return of(null);
         }
@@ -44,6 +44,4 @@ export class AuthenticationService {
       this.router.navigate(["/"]);
     });
   }
-
-  private update;
 }
