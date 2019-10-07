@@ -45,6 +45,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { FavouriteItemComponent } from "./components/favourite-item/favourite-item.component";
+import { StatsComponent } from './pages/stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { FavouriteItemComponent } from "./components/favourite-item/favourite-it
     SearchItemComponent,
     CurrentItemComponent,
     LoginComponent,
-    FavouriteItemComponent
+    FavouriteItemComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,
