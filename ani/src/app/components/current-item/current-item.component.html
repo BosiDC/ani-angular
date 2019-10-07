@@ -1,4 +1,4 @@
-<td style="width: 100%; border-spacing: 50px;">
+<td style="width: 92%; border-spacing: 50px;">
   <nb-card accent="info">
     <nb-card-header>
       <div>
@@ -13,6 +13,7 @@
     </nb-card-body>
     <nb-card-footer>
       <nb-toggle
+        *ngIf="auth.users$ | async as user; else login"
         labelPosition="start"
         [(checked)]="checked"
         status="success"
@@ -20,6 +21,7 @@
         (checkedChange)="toggle()"
         >Fave</nb-toggle
       >
+      <ng-template #login></ng-template>
       Type: {{ current.type }} <br />
       Episodes: {{ current.episodes }} <br />
       URL: <a href="{{ current.url }}">MyAnimeList (MAL)</a>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Search } from "../../models/Anime";
 import { ResultService } from "../../services/result.service";
+import { AuthenticationService } from "../../services/authentication.service";
 
 @Component({
   selector: "app-search-item",
@@ -10,7 +11,10 @@ import { ResultService } from "../../services/result.service";
 export class SearchItemComponent implements OnInit {
   @Input() search: Search;
 
-  constructor(resultService: ResultService) {}
+  constructor(
+    resultService: ResultService,
+    public auth: AuthenticationService
+  ) {}
 
   ngOnInit() {}
 }
