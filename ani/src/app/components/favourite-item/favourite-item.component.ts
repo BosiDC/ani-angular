@@ -17,4 +17,7 @@ export class FavouriteItemComponent implements OnInit {
       console.log(list);
     });
   }
+  deleteFave(event, list) {
+    this.faveService.deleteFave(list.id);
+  }
 }
