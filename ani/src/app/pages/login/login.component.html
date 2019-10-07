@@ -1,10 +1,15 @@
 <div style="width: 100%;">
   <div>
-    <body class="mat-app-background" style="width: 30%; height: 70%; margin: 0 auto; margin-top: 10%; ">
+    <body
+      class="mat-app-background"
+      style="width: 30%; height: 70%; margin: auto;"
+    >
       <ngx-auth-firebaseui
-      [guestEnabled]="false"
-      [providers]="[providers.Google]"
-    ></ngx-auth-firebaseui>
+        style="color: black"
+        goBackURL="/"
+        [guestEnabled]="false"
+        [providers]="[providers.Google]"
+      ></ngx-auth-firebaseui>
     </body>
   </div>
 </div>

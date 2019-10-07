@@ -8,7 +8,6 @@ import {
 
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { AngularFireStorage } from "@angular/fire/storage";
 import { Fave } from "../models/List";
 
 @Injectable({

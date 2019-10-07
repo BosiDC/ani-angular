@@ -45,7 +45,8 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { FavouriteItemComponent } from "./components/favourite-item/favourite-item.component";
-import { StatsComponent } from './pages/stats/stats.component';
+import { StatsComponent } from "./pages/stats/stats.component";
+import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { StatsComponent } from './pages/stats/stats.component';
     CurrentItemComponent,
     LoginComponent,
     FavouriteItemComponent,
-    StatsComponent
+    StatsComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
