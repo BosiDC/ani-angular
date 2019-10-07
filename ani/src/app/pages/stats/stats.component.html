@@ -1,8 +1,11 @@
 <nb-layout>
   <nb-layout-column>
-        <div>
+      <!--Right Column-->
+      <!--Graph/Chart 1#-->
+            <div style="padding-bottom: 15%;">
                 <div>
                   <div style="display: block">
+                    <p>Bar Chart</p>
                     <canvas baseChart
                       [datasets]="barChartData"
                       [labels]="barChartLabels"
@@ -13,22 +16,46 @@
                   </div>
                 </div>
               </div>
+        <!--Graph/Chart 2#-->
+            <div style="padding-bottom: 15%;">
+                <div>
+                  <div style="display: block">
+                        <p>Radar Chart</p>
+                    <canvas baseChart
+                      [datasets]="radarChartData"
+                      [options]="radarChartOptions"
+                      [labels]="radarChartLabels"
+                      [chartType]="radarChartType">
+                    </canvas>
+                  </div>
+                </div>
+              </div>
+        <!--Graph/Chart 3#-->
+
+        <!--Graph/Chart 4#-->
   </nb-layout-column>
   <nb-layout-column>
-        <div>
+      <!--Left Column-->
+      <!--Graph/Chart 1#-->
+            <div>
                 <div>
                   <div style="display: block">
+                    <p>Pie Chart</p>
                     <canvas baseChart
-                      [datasets]="barChartData"
-                      [labels]="barChartLabels"
-                      [options]="barChartOptions"
-                      [legend]="barChartLegend"
-                      [chartType]="barChartType">
+                      [datasets]="barChartData2"
+                      [labels]="barChartLabels2"
+                      [options]="barChartOptions2"
+                      [legend]="barChartLegend2"
+                      [chartType]="barChartType2">
                     </canvas>
                   </div>
                 </div>
               </div>
-        
+        <!--Graph/Chart 2#-->
+
+        <!--Graph/Chart 3#-->
+
+        <!--Graph/Chart 4#-->
     </nb-layout-column>
 
 </nb-layout>
