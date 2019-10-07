@@ -7,11 +7,9 @@ import {
 } from "@angular/fire/firestore";
 
 import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 import { AngularFireStorage } from "@angular/fire/storage";
-
-export interface Fave {
-  title: string;
-}
+import { Fave } from "../models/List";
 
 @Injectable({
   providedIn: "root"
@@ -21,18 +19,30 @@ export class FaveService {
   faves: Observable<Fave[]>;
   userId: string;
   collectId: string;
+  faveDoc: AngularFirestoreDocument<Fave>;
 
   constructor(private afs: AngularFirestore, private afAuth: AngularFireAuth) {
     //get user uid
     this.afAuth.authState.subscribe(user => {
       if (user) this.userId = user.uid;
     });
+
+    this.faveCollection = this.afs.collection(`faves/${this.userId}/list`);
+    this.faves = this.faveCollection.snapshotChanges().pipe(
+      map(changes => {
+        return changes.map(a => {
+          const data = a.payload.doc.data() as Fave;
+          data.id = a.payload.doc.id;
+          return data;
+        });
+      })
+    );
   }
 
   //Get user's list
   getFaveList(): Observable<Fave[]> {
     if (!this.userId) return;
-    this.faveCollection = this.afs.collection(`faves/${this.userId}`);
+    this.faveCollection = this.afs.collection(`faves/${this.userId}/list`);
     this.faves = this.faveCollection.valueChanges();
     return this.faves;
   }
@@ -44,5 +54,10 @@ export class FaveService {
       .doc(this.userId)
       .collection("list")
       .add(fave);
+  }
+
+  //Delete fave from user's list
+  deleteFave(fave: Fave) {
+    this.faveDoc = this.afs.doc(`faves/${this.userId}/list/${fave.id}`);
   }
 }
