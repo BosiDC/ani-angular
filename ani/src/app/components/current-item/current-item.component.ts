@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Current } from "src/app/models/Anime";
-import { FaveService, Fave } from "src/app/services/fave.service";
+import { FaveService } from "src/app/services/fave.service";
+import { AuthenticationService } from "../../services/authentication.service";
 
 @Component({
   selector: "app-current-item",
@@ -11,7 +12,7 @@ export class CurrentItemComponent implements OnInit {
   checked: boolean;
   @Input() current: Current;
 
-  constructor(private fave: FaveService) {}
+  constructor(private fave: FaveService, public auth: AuthenticationService) {}
 
   ngOnInit() {}
 

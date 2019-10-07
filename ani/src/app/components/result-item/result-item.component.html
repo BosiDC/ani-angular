@@ -5,7 +5,7 @@
         <div class="titleText" style="float: left; width: 250px;">
           {{ result.title }}
         </div>
-        <div style="float: right; color: #00d68f">
+        <div style="float: right; color: #00d68f; width:30px">
           {{ result.score }}
         </div>
       </div>
@@ -15,9 +15,14 @@
       <!-- img size is 225 x 318-->
     </nb-card-body>
     <nb-card-footer>
-      <nb-toggle labelPosition="start" status="success" style="float:right"
+      <nb-toggle
+        *ngIf="auth.users$ | async as user; else login"
+        labelPosition="start"
+        status="success"
+        style="float:right"
         >Fave</nb-toggle
       >
+      <ng-template #login></ng-template>
       Type: {{ result.type }} <br />
       Episodes: {{ result.episodes }} <br />
       URL: <a href="{{ result.url }}">MyAnimeList (MAL)</a>

@@ -14,7 +14,7 @@ import { AboutComponent } from "./pages/about/about.component";
 import { ResultItemComponent } from "./components/result-item/result-item.component";
 import { FooterComponent } from "./layout/footer/footer.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
+import { ChartsModule } from "ng2-charts";
 //nebular
 import {
   NbThemeModule,
@@ -82,6 +82,7 @@ import { FavouriteItemComponent } from "./components/favourite-item/favourite-it
     NbUserModule,
     NbToggleModule,
     NbTabsetModule,
+    ChartsModule,
     NgxAuthFirebaseUIModule.forRoot(
       {
         apiKey: "AIzaSyD-WnXsJ6CAR6B4BbpxIXfmBeRE5cEiddc",
