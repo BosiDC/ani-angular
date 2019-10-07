@@ -2,7 +2,7 @@
   <p>Name</p>
   <input
     type="text"
-    size="18"
+    size="17"
     nbInput
     placeholder="Search e.g. Pokemon"
     (keyup)="onNameKeyUp($event)"
@@ -54,14 +54,11 @@
       [(ngModel)]="selectedGenre"
       name="genre"
     >
-      <nb-option
-        *ngFor="let genre of genres"
-        [value]="genre.value"
-        style="float: right"
-      >
+      <nb-option *ngFor="let genre of genres" [value]="genre.value">
         {{ genre.viewValue }}
       </nb-option>
     </nb-select>
   </div>
   <button nbButton status="success" (click)="onSubmit()">Search</button>
+  <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
 </form>
