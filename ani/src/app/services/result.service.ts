@@ -3,7 +3,6 @@ import { Top, Search, Current } from "../models/Anime";
 import { Observable } from "rxjs";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { BehaviorSubject } from "rxjs";
-import { ɵNAMESPACE_URIS } from "@angular/platform-browser";
 
 @Injectable({
   providedIn: "root"

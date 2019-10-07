@@ -1,17 +1,19 @@
-@import 'themes';
+@import "themes";
 
-@import '~@nebular/theme/styles/globals';
+@import "~@nebular/theme/styles/globals";
 
 @include nb-install() {
   @include nb-theme-global();
-};
-@import 'themes';
+}
+@import "themes";
 
 //framework component styles:
 
-@import '~@nebular/theme/styles/globals';
+@import "~@nebular/theme/styles/globals";
 
 // install the framework styles
 @include nb-install() {
   @include nb-theme-global();
-};
+}
+
+@import "./my-app.scss";
