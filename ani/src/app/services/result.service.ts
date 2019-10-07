@@ -33,20 +33,30 @@ export class ResultService {
     rating: string,
     genre: string
   ): Observable<Search[]> {
-    let httpParams = new HttpParams();
-    if (name == "") {
-      httpParams.set("q", "");
-    } else {
-      httpParams.set("q", name);
+    let httpParams = new HttpParams()
+      .set("q", name)
+      .set("order_by", order)
+      .set("type", type)
+      .set("status", status)
+      .set("rated", rating)
+      .set("genre", genre);
+    if (name == undefined) {
+      httpParams = httpParams.set("q", "");
     }
-    if (order == "") {
-      httpParams.set("order_by", "");
-    } else {
-      httpParams.set("order_by", order);
+    if (order == undefined) {
+      httpParams = httpParams.set("order_by", "");
     }
-    if (type == "") {
-      httpParams.set("type", "");
-    } else {
+    if (type == undefined) {
+      httpParams = httpParams.set("type", "");
+    }
+    if (status == undefined) {
+      httpParams = httpParams.set("status", "");
+    }
+    if (rating == undefined) {
+      httpParams = httpParams.set("rated", "");
+    }
+    if (genre == undefined) {
+      httpParams = httpParams.set("genre", "");
     }
     return this.http.get<Search[]>(this.searchURL, { params: httpParams });
   }

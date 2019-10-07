@@ -11,12 +11,12 @@ import { ResultService } from "../../services/result.service";
 export class SidebarComponent implements OnInit {
   searchs: Search[];
   sorts: Sort[] = [
-    { value: " ", viewValue: "No Sort" },
+    { value: undefined, viewValue: "No Sort" },
     { value: "title", viewValue: "Title" },
     { value: "score", viewValue: "Score" }
   ];
   types: Type[] = [
-    { value: " ", viewValue: "Any Type" },
+    { value: undefined, viewValue: "Any Type" },
     { value: "tv", viewValue: "TV" },
     { value: "ova", viewValue: "OVA" },
     { value: "special", viewValue: "Special" },
@@ -24,13 +24,13 @@ export class SidebarComponent implements OnInit {
     { value: "music", viewValue: "Music" }
   ];
   statuses: Status[] = [
-    { value: " ", viewValue: "Any Status" },
+    { value: undefined, viewValue: "Any Status" },
     { value: "airing", viewValue: "Airing" },
     { value: "completed", viewValue: "Completed" },
     { value: "to_be_aired", viewValue: "Upcoming" }
   ];
   ratings: Rating[] = [
-    { value: " ", viewValue: "Any Rating" },
+    { value: undefined, viewValue: "Any Rating" },
     { value: "g", viewValue: "G" },
     { value: "pg", viewValue: "PG" },
     { value: "pg13", viewValue: "PG-13" },
@@ -39,7 +39,7 @@ export class SidebarComponent implements OnInit {
     { value: "rx", viewValue: "Rx" }
   ];
   genres: Genre[] = [
-    { value: " ", viewValue: "Any Genre" },
+    { value: undefined, viewValue: "Any Genre" },
     { value: "1", viewValue: "Action" },
     { value: "2", viewValue: "Adventure" },
     { value: "3", viewValue: "Cars" },
