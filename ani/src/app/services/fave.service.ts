@@ -41,10 +41,20 @@ export class FaveService {
 
   //Get user's list
   getFaveList(): Observable<Fave[]> {
-    if (!this.userId) return;
-    this.faveCollection = this.afs.collection(`faves/${this.userId}/list`);
-    this.faves = this.faveCollection.valueChanges();
-    return this.faves;
+    return this.afs
+      .collection<Fave>(`faves/${this.userId}/list`)
+      .snapshotChanges()
+      .pipe(
+        map(actions => {
+          return actions.map(action => {
+            const data = action.payload.doc.data() as Fave;
+            return {
+              id: action.payload.doc.id,
+              title: data.title
+            };
+          });
+        })
+      );
   }
 
   //Add new anime to user's list
@@ -59,5 +69,6 @@ export class FaveService {
   //Delete fave from user's list
   deleteFave(fave: Fave) {
     this.faveDoc = this.afs.doc(`faves/${this.userId}/list/${fave.id}`);
+    this.faveDoc.delete();
   }
 }

@@ -1,7 +1,13 @@
 <nb-list>
   <nb-list-item *ngFor="let list of lists">
     {{ list.title }}
-    <button nbButton status="danger" size="small" style="float:right">
+    <button
+      nbButton
+      (click)="deleteFave($event, list)"
+      status="danger"
+      size="small"
+      style="float:right"
+    >
       Delete
     </button>
   </nb-list-item>
