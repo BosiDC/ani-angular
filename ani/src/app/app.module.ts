@@ -14,7 +14,7 @@ import { AboutComponent } from "./pages/about/about.component";
 import { ResultItemComponent } from "./components/result-item/result-item.component";
 import { FooterComponent } from "./layout/footer/footer.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
+import { ChartsModule } from "ng2-charts";
 //nebular
 import {
   NbThemeModule,
@@ -26,6 +26,7 @@ import {
   NbCheckboxModule,
   NbCardModule,
   NbSelectModule,
+  NbListModule,
   NbUserModule,
   NbToggleModule,
   NbTabsetModule
@@ -44,6 +45,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { FavouriteItemComponent } from "./components/favourite-item/favourite-item.component";
+import { StatsComponent } from './pages/stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { FavouriteItemComponent } from "./components/favourite-item/favourite-it
     SearchItemComponent,
     CurrentItemComponent,
     LoginComponent,
-    FavouriteItemComponent
+    FavouriteItemComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,
@@ -79,9 +82,11 @@ import { FavouriteItemComponent } from "./components/favourite-item/favourite-it
     NbCheckboxModule,
     NbSelectModule,
     NbCardModule,
+    NbListModule,
     NbUserModule,
     NbToggleModule,
     NbTabsetModule,
+    ChartsModule,
     NgxAuthFirebaseUIModule.forRoot(
       {
         apiKey: "AIzaSyD-WnXsJ6CAR6B4BbpxIXfmBeRE5cEiddc",

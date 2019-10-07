@@ -14,4 +14,7 @@ export class AppComponent {
   isSearchRoute() {
     return this.router.url === "/search";
   }
+  isAboutRoute() {
+    return this.router.url === "/about";
+  }
 }

@@ -6,10 +6,12 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { SearchComponent } from "./components/search/search.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { LoggedInGuard } from "ngx-auth-firebaseui";
+import { StatsComponent } from "./pages/stats/stats.component";
 
 const routes: Routes = [
   { path: "", component: ResultComponent },
   { path: "about", component: AboutComponent },
+  { path: "stat", component: StatsComponent },
   {
     path: "profile",
     component: ProfileComponent,

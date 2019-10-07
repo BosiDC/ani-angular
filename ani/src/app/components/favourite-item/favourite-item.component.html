@@ -1,1 +1,8 @@
-<p>favourite-item works!</p>
+<nb-list>
+  <nb-list-item *ngFor="let list of lists">
+    {{ list.title }}
+    <button nbButton status="danger" size="small" style="float:right">
+      Delete
+    </button>
+  </nb-list-item>
+</nb-list>
