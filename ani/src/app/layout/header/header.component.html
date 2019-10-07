@@ -5,21 +5,9 @@
     <nb-action routerLink="/profile" style="color: #ffffff;">Profile</nb-action>
     <nb-action routerLink="/search" style="color: #ffffff;">Browse</nb-action>
     <nb-action routerLink="/about" style="color: #ffffff;">About</nb-action>
-  </nb-actions>
-  <form>
-    <input
-      type="text"
-      nbInput
-      status="info"
-      placeholder="Search e.g Kimetsu No Yaiba"
-      fieldSize="small"
-      shape="round"
-    />
-  </form>
 
-  <!--If user is logged on-->
-  <nb-actions size="medium" *ngIf="auth.users$ | async as user; else login">
-    <nb-action>
+    <!--If user is logged on-->
+    <nb-action *ngIf="auth.users$ | async as user; else login">
       <button
         nbButton
         outline
@@ -31,21 +19,18 @@
       </button>
     </nb-action>
   </nb-actions>
-
   <!--If user is not logged on-->
   <ng-template #login>
-    <nb-actions size="medium">
-      <nb-action>
-        <button
-          nbButton
-          outline
-          size="small"
-          status="success"
-          routerLink="/login"
-        >
-          Sign In
-        </button>
-      </nb-action>
-    </nb-actions>
+    <nb-action>
+      <button
+        nbButton
+        outline
+        size="small"
+        status="success"
+        routerLink="/login"
+      >
+        Sign In
+      </button>
+    </nb-action>
   </ng-template>
 </nb-layout-header>

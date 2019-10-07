@@ -54,7 +54,11 @@
       [(ngModel)]="selectedGenre"
       name="genre"
     >
-      <nb-option *ngFor="let genre of genres" [value]="genre.value">
+      <nb-option
+        *ngFor="let genre of genres"
+        [value]="genre.value"
+        style="float: right"
+      >
         {{ genre.viewValue }}
       </nb-option>
     </nb-select>
