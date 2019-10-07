@@ -68,7 +68,7 @@ export class FaveService {
 
   //Delete fave from user's list
   deleteFave(fave: Fave) {
-    this.faveDoc = this.afs.doc(`faves/${this.userId}/list/${fave.id}`);
+    this.faveDoc = this.afs.doc(`faves/${this.userId}/list/${fave}`);
     this.faveDoc.delete();
   }
 }
