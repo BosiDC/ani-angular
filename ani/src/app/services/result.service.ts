@@ -40,6 +40,7 @@ export class ResultService {
       .set("status", status)
       .set("rated", rating)
       .set("genre", genre);
+    //if undefined put empty string in the params
     if (name == undefined) {
       httpParams = httpParams.set("q", "");
     }
