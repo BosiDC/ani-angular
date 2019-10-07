@@ -26,6 +26,7 @@ import {
   NbCheckboxModule,
   NbCardModule,
   NbSelectModule,
+  NbListModule,
   NbUserModule,
   NbToggleModule,
   NbTabsetModule
@@ -79,6 +80,7 @@ import { FavouriteItemComponent } from "./components/favourite-item/favourite-it
     NbCheckboxModule,
     NbSelectModule,
     NbCardModule,
+    NbListModule,
     NbUserModule,
     NbToggleModule,
     NbTabsetModule,
