@@ -10,6 +10,7 @@ import { AuthenticationService } from "../../services/authentication.service";
   styleUrls: ["./search-item.component.scss"]
 })
 export class SearchItemComponent implements OnInit {
+  checked: boolean;
   @Input() search: Search;
 
   constructor(
@@ -23,7 +24,7 @@ export class SearchItemComponent implements OnInit {
   toggle() {
     if (this.checked == true) {
       const fave = {
-        title: this.current.title,
+        title: this.search.title,
         checked: true
       };
       this.fave.addFave(fave);
