@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Search } from "../../models/Anime";
 import { ResultService } from "../../services/result.service";
+import { FaveService } from "src/app/services/fave.service";
 import { AuthenticationService } from "../../services/authentication.service";
 
 @Component({
@@ -12,9 +13,20 @@ export class SearchItemComponent implements OnInit {
   @Input() search: Search;
 
   constructor(
+    private fave: FaveService,
     resultService: ResultService,
     public auth: AuthenticationService
   ) {}
 
   ngOnInit() {}
+
+  toggle() {
+    if (this.checked == true) {
+      const fave = {
+        title: this.current.title,
+        checked: true
+      };
+      this.fave.addFave(fave);
+    }
+  }
 }
