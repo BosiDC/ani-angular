@@ -29,7 +29,7 @@ import {
   NbListModule,
   NbUserModule,
   NbToggleModule,
-  NbTabsetModule
+  NbTabsetModule,
 } from "@nebular/theme";
 
 import { NbEvaIconsModule } from "@nebular/eva-icons";
