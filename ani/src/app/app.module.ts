@@ -47,6 +47,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { FavouriteItemComponent } from "./components/favourite-item/favourite-item.component";
 import { StatsComponent } from "./pages/stats/stats.component";
 import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.co
     LoginComponent,
     FavouriteItemComponent,
     StatsComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
