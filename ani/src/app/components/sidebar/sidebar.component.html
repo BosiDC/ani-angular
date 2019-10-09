@@ -2,7 +2,7 @@
   <p>Name</p>
   <input
     type="text"
-    size="18"
+    size="17"
     nbInput
     placeholder="Search e.g. Pokemon"
     (keyup)="onNameKeyUp($event)"
@@ -60,4 +60,5 @@
     </nb-select>
   </div>
   <button nbButton status="success" (click)="onSubmit()">Search</button>
+  <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
 </form>

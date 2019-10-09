@@ -10,7 +10,21 @@
             <nb-user
               name="{{ user.displayName }}"
               picture="{{ user.photoURL }}"
+              style="float: left;"
             ></nb-user>
+
+            <button
+              nbButton
+              status="danger"
+              size="small"
+              style="float:right"
+              >
+              Edit
+            </button>
+            <!--button change script-->
+            <script>
+              
+            </script>
           </nb-card-header>
           <nb-card-body>
             Email: {{ user.email }}

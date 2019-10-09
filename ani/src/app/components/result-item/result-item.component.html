@@ -2,7 +2,7 @@
   <nb-card accent="info">
     <nb-card-header>
       <div>
-        <div class="titleText" style="float: left; width: 265px;">
+        <div class="titleText" style="float: left; width: 250px;">
           {{ result.title }}
         </div>
         <div style="float: right; color: #00d68f; width:30px">
@@ -11,7 +11,7 @@
       </div>
     </nb-card-header>
     <nb-card-body>
-      <img class="result-image" src="{{ result.image_url }}" />
+      <a href="{{ result.url }}"><img class="result-image" src="{{ result.image_url }}" /></a>
       <!-- img size is 225 x 318-->
     </nb-card-body>
     <nb-card-footer>

@@ -11,6 +11,7 @@ import { FaveService } from "src/app/services/fave.service";
 export class ResultComponent implements OnInit {
   results: Top[];
   currents: Current[];
+  showSpinner: boolean = true;
 
   constructor(private resultService: ResultService, private db: FaveService) {}
 
@@ -18,9 +19,11 @@ export class ResultComponent implements OnInit {
   ngOnInit() {
     this.resultService.getTop().subscribe(results => {
       this.results = results["top"];
+      this.showSpinner = false;
     });
     this.resultService.getCurrent().subscribe(currents => {
       this.currents = currents["anime"];
+      this.showSpinner = false;
     });
   }
 }

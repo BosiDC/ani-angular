@@ -11,7 +11,7 @@ import { StatsComponent } from "./pages/stats/stats.component";
 const routes: Routes = [
   { path: "", component: ResultComponent },
   { path: "about", component: AboutComponent },
-  { path: "stat", component: StatsComponent },
+  { path: "stats", component: StatsComponent },
   {
     path: "profile",
     component: ProfileComponent,

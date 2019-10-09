@@ -9,7 +9,7 @@ import { AuthenticationService } from "../../services/authentication.service";
 })
 export class ProfileComponent implements OnInit {
   constructor(
-    private sidebarService: NbSidebarService,
+    private sidebarService: NbSidebarService, 
     public auth: AuthenticationService
   ) {}
 
