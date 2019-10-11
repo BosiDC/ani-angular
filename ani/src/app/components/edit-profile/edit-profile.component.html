@@ -4,20 +4,27 @@
   </nb-card-header>
   <nb-card-body>
     <form>
-      <p>Change Display Name</p>
-      <input nbInput placeholder="e.g. John" (keyup)="onNameKeyUp($event)" />
-      <p>Change Description</p>
-      <input
-        nbInput
-        placeholder="e.g. Welcome to my profile"
-        (keyup)="onDesKeyUp($event)"
-      />
-      <p>Upload Profile Image</p>
-      <p>
-        <button>Choose File</button>
-        No file chosen
-      </p>
-      <button nbButton (click)="onSubmit()" type="reset">Submit</button>
+      <div style="padding-bottom: 25px;">
+          <p>Change Display Name</p>
+          <input nbInput placeholder="e.g. John" (keyup)="onNameKeyUp($event)" />
+          <p>Change Description</p>
+          <input
+            nbInput
+            placeholder="e.g. Welcome to my profile"
+            (keyup)="onDesKeyUp($event)"
+          />
+          <p>Upload Profile Image</p>
+          <p>
+            <button nbButton size="small" outline >Choose File</button>
+            No file chosen
+          </p>
+      </div>
+      <div style="border-top: 1px solid #1a1f33;">
+        <div style="padding-top: 25px; padding-bottom: 15px;">
+          <button nbButton (click)="onSubmit()" type="reset">Submit</button>
+          <button nbButton size="small" outline routerLink="/profile" style="margin-left: 15px;">Cancel</button>
+        </div>
+      </div>
     </form>
   </nb-card-body>
 </nb-card>
