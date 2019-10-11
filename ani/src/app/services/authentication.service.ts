@@ -1,7 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { AngularFireAuth } from "@angular/fire/auth";
-import { AngularFirestore } from "@angular/fire/firestore";
+import {
+  AngularFirestore,
+  AngularFirestoreDocument
+} from "@angular/fire/firestore";
 
 import { Observable, of } from "rxjs";
 import { switchMap } from "rxjs/operators";
@@ -11,6 +14,7 @@ interface User {
   email: string;
   photoURL?: string;
   displayName: string;
+  description?: string;
 }
 
 @Injectable({
@@ -39,5 +43,21 @@ export class AuthenticationService {
     return this.afAuth.auth.signOut().then(() => {
       this.router.navigate(["/"]);
     });
+  }
+
+  private updateUserData(user) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(
+      `users/${user.uid}`
+    );
+
+    const data = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      description: user.description,
+      photoURL: user.photoURL
+    };
+
+    return userRef.set(data, { merge: true });
   }
 }
