@@ -8,8 +8,9 @@ import { AuthenticationService } from "../../services/authentication.service";
   styleUrls: ["./profile.component.css"]
 })
 export class ProfileComponent implements OnInit {
+  isOn: boolean = true;
   constructor(
-    private sidebarService: NbSidebarService, 
+    private sidebarService: NbSidebarService,
     public auth: AuthenticationService
   ) {}
 

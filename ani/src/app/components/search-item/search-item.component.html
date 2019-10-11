@@ -11,15 +11,19 @@
       </div>
     </nb-card-header>
     <nb-card-body>
-        <a href="{{ result.url }}"><img class="result-image" src="{{ search.image_url }}" /></a>
+      <a href="{{ search.url }}"
+        ><img class="result-image" src="{{ search.image_url }}"
+      /></a>
       <!-- img size is 225 x 318-->
     </nb-card-body>
     <nb-card-footer>
       <nb-toggle
         *ngIf="auth.users$ | async as user; else login"
         labelPosition="start"
+        [(checked)]="checked"
         status="success"
         style="float:right"
+        (checkedChange)="toggle()"
         >Fave</nb-toggle
       >
       <ng-template #login></ng-template>

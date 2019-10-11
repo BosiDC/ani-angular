@@ -48,6 +48,7 @@ import { FavouriteItemComponent } from "./components/favourite-item/favourite-it
 import { StatsComponent } from "./pages/stats/stats.component";
 import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { ProfileStatComponent } from './components/profile-stat/profile-stat.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     FavouriteItemComponent,
     StatsComponent,
     LoadingSpinnerComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    ProfileStatComponent
   ],
   imports: [
     BrowserModule,
