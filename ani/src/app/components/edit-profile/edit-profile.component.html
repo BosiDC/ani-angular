@@ -1,4 +1,4 @@
-<nb-card style="width: 40%" accent="danger">
+<nb-card style="width: 50%;border: solid 1px #1a1f33; box-shadow: none;">
   <nb-card-header>
     Profile Edit
   </nb-card-header>
@@ -7,7 +7,11 @@
       <p>Change Display Name</p>
       <input nbInput placeholder="e.g. John" (keyup)="onNameKeyUp($event)" />
       <p>Change Description</p>
-      <input nbInput placeholder="e.g. Hello" (keyup)="onDesKeyUp($event)" />
+      <input
+        nbInput
+        placeholder="e.g. Welcome to my profile"
+        (keyup)="onDesKeyUp($event)"
+      />
       <p>Upload Profile Image</p>
       <p>
         <button>Choose File</button>

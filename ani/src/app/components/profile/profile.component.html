@@ -3,7 +3,7 @@
     <nb-tabset>
       <nb-tab tabTitle="Overview">
         <nb-card
-          style="width: 40%; border: solid 1px #1a1f33; box-shadow: none;"
+          style="width: 50%; border: solid 1px #1a1f33; box-shadow: none;"
           *ngIf="auth.users$ | async as user"
         >
           <nb-card-header>
@@ -34,7 +34,7 @@
         <app-favourite-item></app-favourite-item>
       </nb-tab>
       <nb-tab tabTitle="Stats">
-        Stats can place a router here to another page
+        <app-profile-stat></app-profile-stat>
       </nb-tab>
     </nb-tabset>
   </div>
