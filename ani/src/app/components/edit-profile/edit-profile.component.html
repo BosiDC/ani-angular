@@ -3,19 +3,17 @@
     Profile Edit
   </nb-card-header>
   <nb-card-body>
-    <p>Change Display Name</p>
-    <input nbInput placeholder="e.g. John" (keyup)="onNameKeyUp($event)" />
-    {{ name }}
-    <p>Change Description</p>
-    <input nbInput placeholder="e.g. Hello" (keyup)="onDesKeyUp($event)" />
-    {{ desc }}
-    <p>Upload Profile Image</p>
-    <p>
-      <button>Choose File</button>
-      No file chosen
-    </p>
+    <form>
+      <p>Change Display Name</p>
+      <input nbInput placeholder="e.g. John" (keyup)="onNameKeyUp($event)" />
+      <p>Change Description</p>
+      <input nbInput placeholder="e.g. Hello" (keyup)="onDesKeyUp($event)" />
+      <p>Upload Profile Image</p>
+      <p>
+        <button>Choose File</button>
+        No file chosen
+      </p>
+      <button nbButton (click)="onSubmit()" type="reset">Submit</button>
+    </form>
   </nb-card-body>
-  <nb-card-footer>
-    <button nbButton (click)="onSubmit()">Submit</button>
-  </nb-card-footer>
 </nb-card>
