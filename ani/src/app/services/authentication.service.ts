@@ -10,8 +10,6 @@ import { Observable, of } from "rxjs";
 import { switchMap } from "rxjs/operators";
 
 interface User {
-  uid: string;
-  email: string;
   photoURL?: string;
   displayName: string;
   description?: string;
@@ -43,21 +41,5 @@ export class AuthenticationService {
     return this.afAuth.auth.signOut().then(() => {
       this.router.navigate(["/"]);
     });
-  }
-
-  private updateUserData(user) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(
-      `users/${user.uid}`
-    );
-
-    const data = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      description: user.description,
-      photoURL: user.photoURL
-    };
-
-    return userRef.set(data, { merge: true });
   }
 }

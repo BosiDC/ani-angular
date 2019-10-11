@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { ProfileService } from "../../services/profile.service";
+import { AuthenticationService } from "../../services/authentication.service";
 
 @Component({
   selector: "app-edit-profile",
@@ -8,10 +10,17 @@ import { Component, OnInit } from "@angular/core";
 export class EditProfileComponent implements OnInit {
   name: string;
   desc: string;
+  constructor(
+    public profileService: ProfileService,
+    public auth: AuthenticationService
+  ) {}
 
-  constructor() {}
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.auth.users$.subscribe(user => {
+      this.name = user.displayName;
+      this.desc = user.description;
+    });
+  }
 
   onNameKeyUp(event: any) {
     this.name = event.target.value;
@@ -21,5 +30,11 @@ export class EditProfileComponent implements OnInit {
     this.desc = event.target.value;
   }
 
-  onSubmit() {}
+  onSubmit() {
+    const user = {
+      displayName: this.name,
+      description: this.desc
+    };
+    this.profileService.updateUserData(user);
+  }
 }
