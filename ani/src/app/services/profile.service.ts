@@ -10,6 +10,9 @@ interface User {
   displayName: string;
   description?: string;
 }
+interface DownloadUrl {
+  url: string;
+}
 
 @Injectable({
   providedIn: "root"
@@ -29,6 +32,15 @@ export class ProfileService {
       .update({
         displayName: user.displayName,
         description: user.description
+      });
+  }
+
+  updateURL(downloadurl: DownloadUrl) {
+    this.afs
+      .collection("users")
+      .doc(this.userId)
+      .update({
+        photoURL: downloadurl.url
       });
   }
 }

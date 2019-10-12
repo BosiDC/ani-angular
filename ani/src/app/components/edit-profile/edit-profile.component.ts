@@ -5,14 +5,9 @@ import {
   AngularFireStorage,
   AngularFireUploadTask
 } from "@angular/fire/storage";
-import { AngularFirestore } from "@angular/fire/firestore";
 import { Observable } from "rxjs";
-import { finalize, tap } from "rxjs/operators";
-import { AngularFireAuth } from "@angular/fire/auth";
+import { finalize } from "rxjs/operators";
 
-export interface DownloadUrl {
-  url: string;
-}
 @Component({
   selector: "app-edit-profile",
   templateUrl: "./edit-profile.component.html",
@@ -29,15 +24,9 @@ export class EditProfileComponent implements OnInit {
   userId: string;
   constructor(
     private storage: AngularFireStorage,
-    private db: AngularFirestore,
     public profileService: ProfileService,
-    public auth: AuthenticationService,
-    private afAuth: AngularFireAuth
-  ) {
-    this.afAuth.authState.subscribe(user => {
-      if (user) this.userId = user.uid;
-    });
-  }
+    public auth: AuthenticationService
+  ) {}
 
   ngOnInit() {
     this.auth.users$.subscribe(user => {
@@ -80,18 +69,10 @@ export class EditProfileComponent implements OnInit {
             const downloadurl = {
               url: url
             };
-            this.updateURL(downloadurl);
+            this.profileService.updateURL(downloadurl);
           });
         })
       )
       .subscribe();
-  }
-  updateURL(downloadurl: DownloadUrl) {
-    this.db
-      .collection("users")
-      .doc(this.userId)
-      .update({
-        photoURL: downloadurl.url
-      });
   }
 }
