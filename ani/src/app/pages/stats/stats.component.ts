@@ -8,6 +8,7 @@ import { Label } from 'ng2-charts';
   styleUrls: ['./stats.component.scss']
 })
 export class StatsComponent implements OnInit {
+  //Chart 1# -----------------------------------------------------------
   public barChartOptions: ChartOptions = {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.
@@ -19,7 +20,6 @@ export class StatsComponent implements OnInit {
       }
     }
   };
-  //Chart 1# -----------------------------------------------------------
   public barChartLabels: Label[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
