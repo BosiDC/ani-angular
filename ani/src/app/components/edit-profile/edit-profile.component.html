@@ -15,7 +15,7 @@
         />
         <p>Upload Profile Image</p>
         <p>
-          <input type="file" />
+          <input type="file" (change)="startUpload($event)" />
         </p>
       </div>
       <div style="border-top: 1px solid #1a1f33;">
@@ -38,6 +38,9 @@
           >
             Cancel
           </button>
+        </div>
+        <div>
+          {{ url }}
         </div>
       </div>
     </form>
