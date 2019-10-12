@@ -1,6 +1,15 @@
 <nb-card style="width: 50%;border: solid 1px #1a1f33; box-shadow: none;">
   <nb-card-header>
     Profile Edit
+    <button
+      nbButton
+      (click)="closeEdit()"
+      size="small"
+      status="danger"
+      style="margin-left: 15px; float: right"
+    >
+      Close
+    </button>
   </nb-card-header>
   <nb-card-body>
     <form>
@@ -22,30 +31,9 @@
           <input type="file" (change)="startUpload($event)" />
         </p>
       </div>
-      <div style="border-top: 1px solid #1a1f33;">
-        <div style="padding-top: 25px; padding-bottom: 15px;">
-          <button
-            nbButton
-            (click)="onSubmit()"
-            (click)="closeEdit()"
-            type="reset"
-          >
-            Save
-          </button>
-          <button
-            nbButton
-            (click)="closeEdit()"
-            outline
-            status="danger"
-            style="margin-left: 15px; float: right"
-          >
-            Cancel
-          </button>
-        </div>
-        <div>
-          {{ url }}
-        </div>
-      </div>
+      <button nbButton (click)="onSubmit()" status="success" type="reset">
+        Save
+      </button>
     </form>
   </nb-card-body>
 </nb-card>
