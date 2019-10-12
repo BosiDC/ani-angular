@@ -28,7 +28,14 @@
           >
             Save
           </button>
-          <button nbButton size="small" outline style="margin-left: 15px;">
+          <button
+            nbButton
+            size="small"
+            (click)="closeEdit()"
+            outline
+            status="danger"
+            style="margin-left: 15px;"
+          >
             Cancel
           </button>
         </div>
