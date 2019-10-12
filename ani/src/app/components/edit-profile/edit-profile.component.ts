@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { ProfileService } from "../../services/profile.service";
 import { AuthenticationService } from "../../services/authentication.service";
 
@@ -8,6 +8,8 @@ import { AuthenticationService } from "../../services/authentication.service";
   styleUrls: ["./edit-profile.component.scss"]
 })
 export class EditProfileComponent implements OnInit {
+  @Output() onCloseClick = new EventEmitter();
+  url: string;
   name: string;
   desc: string;
   constructor(
@@ -36,5 +38,13 @@ export class EditProfileComponent implements OnInit {
       description: this.desc
     };
     this.profileService.updateUserData(user);
+  }
+
+  closeEdit() {
+    this.onCloseClick.emit();
+  }
+
+  startUpload(fileInput: Event) {
+    this.profileService.uploadImage(fileInput);
   }
 }

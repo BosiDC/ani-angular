@@ -11,7 +11,7 @@
       </div>
     </nb-card-header>
     <nb-card-body>
-      <a href="{{ result.url }}"
+      <a href="{{ result.url }}" target="_blank"
         ><img class="result-image" src="{{ result.image_url }}"
       /></a>
       <!-- img size is 225 x 318-->
@@ -29,7 +29,7 @@
       <ng-template #login></ng-template>
       Type: {{ result.type }} <br />
       Episodes: {{ result.episodes }} <br />
-      URL: <a href="{{ result.url }}">MyAnimeList (MAL)</a>
+      URL: <a href="{{ result.url }}" target="_blank">MyAnimeList (MAL)</a>
     </nb-card-footer>
   </nb-card>
 </td>

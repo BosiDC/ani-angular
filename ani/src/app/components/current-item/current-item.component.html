@@ -8,7 +8,9 @@
       </div>
     </nb-card-header>
     <nb-card-body>
-        <a href="{{ current.url }}"><img class="result-image" src="{{ current.image_url }}" /></a>
+      <a href="{{ current.url }}" target="_blank"
+        ><img class="result-image" src="{{ current.image_url }}"
+      /></a>
       <!-- img size is 225 x 318-->
     </nb-card-body>
     <nb-card-footer>
@@ -24,7 +26,7 @@
       <ng-template #login></ng-template>
       Type: {{ current.type }} <br />
       Episodes: {{ current.episodes }} <br />
-      URL: <a href="{{ current.url }}">MyAnimeList (MAL)</a>
+      URL: <a href="{{ current.url }}" target="_blank">MyAnimeList (MAL)</a>
     </nb-card-footer>
   </nb-card>
 </td>

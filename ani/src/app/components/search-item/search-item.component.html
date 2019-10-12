@@ -11,7 +11,7 @@
       </div>
     </nb-card-header>
     <nb-card-body>
-      <a href="{{ search.url }}"
+      <a href="{{ search.url }}" target="_blank"
         ><img class="result-image" src="{{ search.image_url }}"
       /></a>
       <!-- img size is 225 x 318-->
@@ -30,7 +30,7 @@
       Type: {{ search.type }} <br />
       Episodes: {{ search.episodes }} <br />
       Rating: {{ search.rated }} <br />
-      URL: <a href="{{ search.url }}">MyAnimeList (MAL)</a>
+      URL: <a href="{{ search.url }}" target="_blank">MyAnimeList (MAL)</a>
     </nb-card-footer>
   </nb-card>
 </td>
