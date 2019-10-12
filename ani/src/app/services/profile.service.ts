@@ -7,9 +7,12 @@ import {
 } from "@angular/fire/storage";
 import { Observable } from "rxjs";
 import { finalize } from "rxjs/operators";
+import { FirebaseAuth } from "@firebase/auth-types";
+import * as firebase from "firebase";
+
 interface User {
   photoURL?: string;
-  displayName: string;
+  displayName?: string;
   description?: string;
 }
 interface DownloadUrl {
@@ -23,6 +26,7 @@ export class ProfileService {
   task: AngularFireUploadTask;
   snapshot: Observable<any>;
   downloadURL: Observable<any>;
+  private authState: FirebaseAuth;
   userId: string;
   constructor(
     private afs: AngularFirestore,
@@ -56,6 +60,10 @@ export class ProfileService {
   }
 
   updateUserData(user: User) {
+    this.afAuth.auth.currentUser.updateProfile({
+      displayName: user.displayName
+    });
+
     this.afs
       .collection("users")
       .doc(this.userId)
@@ -66,6 +74,10 @@ export class ProfileService {
   }
 
   updateURL(downloadurl: DownloadUrl) {
+    this.afAuth.auth.currentUser.updateProfile({
+      photoURL: downloadurl.url
+    });
+
     this.afs
       .collection("users")
       .doc(this.userId)
