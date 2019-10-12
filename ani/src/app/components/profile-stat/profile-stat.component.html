@@ -1,73 +1,77 @@
 <nb-layout>
-    <!--Left-->
-    <nb-layout-column>
-         <nb-card accent="info">
-            <nb-card-header>
-                Your Statistics:
-            </nb-card-header>
-            <nb-card-body>
-                <ul>
-                    <li>Number of Favourites:</li>
-                    <li>Other Stats:</li>
-                    <li>??: {{ list.title }}</li>
-                    <li>??:</li>
-                </ul>
-            </nb-card-body>
-         </nb-card>
-         <nb-card>
-             <nb-card-header>
-                 Year Breakdown:
-            </nb-card-header>
-            <nb-card-body>
-            
-                    <div style="display: block">
-                        <p>Bar Chart</p>
-                        <canvas baseChart
-                              [datasets]="barChartData"
-                              [labels]="barChartLabels"
-                              [options]="barChartOptions"
-                              [legend]="barChartLegend"
-                              [chartType]="barChartType">
-                        </canvas>
-                    </div>
-                </nb-card-body>
-         </nb-card>
-    </nb-layout-column>
-    <!--Right-->
-    <nb-layout-column>
-          <nb-card accent="warning">
-              <nb-card-header>
-                    Genre Breakdown:
-                <nb-tabset>
-                <!--view as bar chart-->
-                <nb-tab tabTitle="Bar Chart">
-                        <div style="display: block">
-                            <p>Bar Chart</p>
-                            <canvas baseChart
-                                  [datasets]="barChartData"
-                                  [labels]="barChartLabels"
-                                  [options]="barChartOptions"
-                                  [legend]="barChartLegend"
-                                  [chartType]="barChartType">
-                            </canvas>
-                        </div>
-                </nb-tab>
-                <!--view as pie chart-->
-                <nb-tab tabTitle="Pie Chart">
-                        <div style="display: block">
-                                <p>Pie Chart</p>
-                                <canvas baseChart
-                                  [datasets]="barChartData2"
-                                  [labels]="barChartLabels2"
-                                  [options]="barChartOptions2"
-                                  [legend]="barChartLegend2"
-                                  [chartType]="barChartType2">
-                                </canvas>
-                              </div>
-                </nb-tab>
-              </nb-tabset>
-            </nb-card-header>
-          </nb-card>
-    </nb-layout-column>
+  <!--Left-->
+  <nb-layout-column>
+    <nb-card accent="info">
+      <nb-card-header>
+        Your Statistics:
+      </nb-card-header>
+      <nb-card-body>
+        <ul>
+          <li>Number of Favourites:</li>
+          <li>Other Stats:</li>
+          <li>??:</li>
+          <li>??:</li>
+        </ul>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>
+        Year Breakdown:
+      </nb-card-header>
+      <nb-card-body>
+        <div style="display: block">
+          <p>Bar Chart</p>
+          <canvas
+            baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+          >
+          </canvas>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </nb-layout-column>
+  <!--Right-->
+  <nb-layout-column>
+    <nb-card accent="warning">
+      <nb-card-header>
+        Genre Breakdown:
+        <nb-tabset>
+          <!--view as bar chart-->
+          <nb-tab tabTitle="Bar Chart">
+            <div style="display: block">
+              <p>Bar Chart</p>
+              <canvas
+                baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+              >
+              </canvas>
+            </div>
+          </nb-tab>
+          <!--view as pie chart-->
+          <nb-tab tabTitle="Pie Chart">
+            <div style="display: block">
+              <p>Pie Chart</p>
+              <canvas
+                baseChart
+                [datasets]="barChartData2"
+                [labels]="barChartLabels2"
+                [options]="barChartOptions2"
+                [legend]="barChartLegend2"
+                [chartType]="barChartType2"
+              >
+              </canvas>
+            </div>
+          </nb-tab>
+        </nb-tabset>
+      </nb-card-header>
+    </nb-card>
+  </nb-layout-column>
 </nb-layout>
-      
