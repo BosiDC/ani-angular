@@ -1,7 +1,7 @@
 <h1>Your Favourites</h1>
 <nb-list>
   <nb-list-item *ngFor="let list of lists">
-    {{ list.title }}
+    <a href="{{ list.url }}">{{ list.title }}</a>
     <button
       nbButton
       (click)="deleteFave($event, list)"

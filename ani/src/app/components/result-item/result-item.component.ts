@@ -25,6 +25,7 @@ export class ResultItemComponent implements OnInit {
     if (this.checked == true) {
       const fave = {
         title: this.result.title,
+        url: this.result.url,
         checked: true
       };
       this.fave.addFave(fave);
