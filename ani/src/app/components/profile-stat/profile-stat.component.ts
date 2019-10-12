@@ -46,5 +46,5 @@ export class ProfileStatComponent implements OnInit {
 
   ngOnInit() {
   }
-d
+
 }

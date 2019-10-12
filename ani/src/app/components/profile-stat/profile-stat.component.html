@@ -9,10 +9,28 @@
                 <ul>
                     <li>Number of Favourites:</li>
                     <li>Other Stats:</li>
-                    <li>??:</li>
+                    <li>??: {{ list.title }}</li>
                     <li>??:</li>
                 </ul>
             </nb-card-body>
+         </nb-card>
+         <nb-card>
+             <nb-card-header>
+                 Year Breakdown:
+            </nb-card-header>
+            <nb-card-body>
+            
+                    <div style="display: block">
+                        <p>Bar Chart</p>
+                        <canvas baseChart
+                              [datasets]="barChartData"
+                              [labels]="barChartLabels"
+                              [options]="barChartOptions"
+                              [legend]="barChartLegend"
+                              [chartType]="barChartType">
+                        </canvas>
+                    </div>
+                </nb-card-body>
          </nb-card>
     </nb-layout-column>
     <!--Right-->
