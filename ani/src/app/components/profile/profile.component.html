@@ -28,7 +28,10 @@
             <p>Description: {{ user?.description }}</p>
           </nb-card-body>
         </nb-card>
-        <app-edit-profile *ngIf="!isOn"></app-edit-profile>
+        <app-edit-profile
+          *ngIf="!isOn"
+          (onCloseClick)="isOn = true"
+        ></app-edit-profile>
       </nb-tab>
       <nb-tab tabTitle="Favourites">
         <app-favourite-item></app-favourite-item>
