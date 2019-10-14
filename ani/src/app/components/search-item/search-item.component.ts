@@ -25,6 +25,7 @@ export class SearchItemComponent implements OnInit {
     if (this.checked == true) {
       const fave = {
         title: this.search.title,
+        url: this.search.url,
         checked: true
       };
       this.fave.addFave(fave);

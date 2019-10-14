@@ -21,6 +21,7 @@ export class CurrentItemComponent implements OnInit {
     if (this.checked == true) {
       const fave = {
         title: this.current.title,
+        url: this.current.url,
         checked: true
       };
       this.fave.addFave(fave);

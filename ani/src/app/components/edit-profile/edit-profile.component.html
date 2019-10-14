@@ -1,12 +1,25 @@
 <nb-card style="width: 50%;border: solid 1px #1a1f33; box-shadow: none;">
   <nb-card-header>
     Profile Edit
+    <button
+      nbButton
+      (click)="closeEdit()"
+      size="small"
+      status="danger"
+      style="margin-left: 15px; float: right"
+    >
+      Close
+    </button>
   </nb-card-header>
   <nb-card-body>
     <form>
       <div style="padding-bottom: 25px;">
         <p>Change Display Name</p>
-        <input nbInput placeholder="e.g. John" (keyup)="onNameKeyUp($event)" />
+        <input
+          nbInput
+          placeholder="e.g. John Smith"
+          (keyup)="onNameKeyUp($event)"
+        />
         <p>Change Description</p>
         <input
           nbInput
@@ -15,31 +28,12 @@
         />
         <p>Upload Profile Image</p>
         <p>
-          <input type="file" />
+          <input type="file" (change)="startUpload($event)" />
         </p>
       </div>
-      <div style="border-top: 1px solid #1a1f33;">
-        <div style="padding-top: 25px; padding-bottom: 15px;">
-          <button
-            nbButton
-            (click)="onSubmit()"
-            (click)="closeEdit()"
-            type="reset"
-          >
-            Save
-          </button>
-          <button
-            nbButton
-            size="small"
-            (click)="closeEdit()"
-            outline
-            status="danger"
-            style="margin-left: 15px;"
-          >
-            Cancel
-          </button>
-        </div>
-      </div>
+      <button nbButton (click)="onSubmit()" status="success" type="reset">
+        Save
+      </button>
     </form>
   </nb-card-body>
 </nb-card>

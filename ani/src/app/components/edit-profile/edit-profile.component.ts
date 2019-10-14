@@ -9,6 +9,7 @@ import { AuthenticationService } from "../../services/authentication.service";
 })
 export class EditProfileComponent implements OnInit {
   @Output() onCloseClick = new EventEmitter();
+  url: string;
   name: string;
   desc: string;
   constructor(
@@ -41,5 +42,9 @@ export class EditProfileComponent implements OnInit {
 
   closeEdit() {
     this.onCloseClick.emit();
+  }
+
+  startUpload(fileInput: Event) {
+    this.profileService.uploadImage(fileInput);
   }
 }

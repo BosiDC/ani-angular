@@ -49,7 +49,8 @@ export class FaveService {
             const data = action.payload.doc.data() as Fave;
             return {
               id: action.payload.doc.id,
-              title: data.title
+              title: data.title,
+              url: data.url
             };
           });
         })
