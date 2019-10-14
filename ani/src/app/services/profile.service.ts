@@ -8,7 +8,6 @@ import {
 import { Observable } from "rxjs";
 import { finalize } from "rxjs/operators";
 import { FirebaseAuth } from "@firebase/auth-types";
-import * as firebase from "firebase";
 
 interface User {
   photoURL?: string;
