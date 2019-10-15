@@ -81,5 +81,8 @@ export class StatsComponent implements OnInit {
     this.stat.getData().subscribe(res => {
       console.log(res);
     });
+    this.stat.getHello().subscribe(res => {
+      console.log(res);
+    });
   }
 }

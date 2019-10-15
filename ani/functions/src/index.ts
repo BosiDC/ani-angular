@@ -19,8 +19,9 @@ export const getReportData = functions.https.onRequest((req, res) => {
       location: "australia-southeast1",
       useLegacySql: false
     })
-    .then(function() {
-      return res.status(200).send("hello");
+    .then(function(results) {
+      const rows = results[0];
+      return res.status(200).json(rows);
     })
     .catch(function(error) {
       return res.status(500).json(error);

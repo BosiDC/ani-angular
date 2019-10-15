@@ -14,4 +14,10 @@ export class StatService {
       )
       .pipe(map((result: any) => result));
   }
+
+  getHello() {
+    return this.http.get<any[]>(
+      "https://us-central1-anii-420.cloudfunctions.net/helloWorld"
+    );
+  }
 }
