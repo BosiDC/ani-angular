@@ -26,6 +26,8 @@ export class ResultItemComponent implements OnInit {
       const fave = {
         title: this.result.title,
         url: this.result.url,
+        type: this.result.type,
+        mal_id: this.result.mal_id,
         checked: true
       };
       this.fave.addFave(fave);
