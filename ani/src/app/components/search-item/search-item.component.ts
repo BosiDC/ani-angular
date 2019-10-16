@@ -26,6 +26,8 @@ export class SearchItemComponent implements OnInit {
       const fave = {
         title: this.search.title,
         url: this.search.url,
+        type: this.search.type,
+        mal_id: this.search.mal_id,
         checked: true
       };
       this.fave.addFave(fave);
