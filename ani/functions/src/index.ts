@@ -108,7 +108,7 @@ export const getTopTen = functions.https.onRequest((request, response) => {
   });
 });
 
-//drama
+//get top ten drama
 export const getDramaTen = functions.https.onRequest((request, response) => {
   cors(request, response, () => {
     const bigquery = new BigQuery({
@@ -133,7 +133,7 @@ export const getDramaTen = functions.https.onRequest((request, response) => {
   });
 });
 
-//adventure
+//get top ten adventure
 export const getAdventureTen = functions.https.onRequest(
   (request, response) => {
     cors(request, response, () => {
@@ -160,7 +160,7 @@ export const getAdventureTen = functions.https.onRequest(
   }
 );
 
-//action
+//get top ten action
 export const getActionTen = functions.https.onRequest((request, response) => {
   cors(request, response, () => {
     const bigquery = new BigQuery({
@@ -185,7 +185,7 @@ export const getActionTen = functions.https.onRequest((request, response) => {
   });
 });
 
-//comedy
+//get top ten comedy
 export const getComedyTen = functions.https.onRequest((request, response) => {
   cors(request, response, () => {
     const bigquery = new BigQuery({
@@ -209,7 +209,8 @@ export const getComedyTen = functions.https.onRequest((request, response) => {
       });
   });
 });
-//fantasy
+
+//get top ten fantasy
 export const getFantasyTen = functions.https.onRequest((request, response) => {
   cors(request, response, () => {
     const bigquery = new BigQuery({
@@ -234,7 +235,7 @@ export const getFantasyTen = functions.https.onRequest((request, response) => {
   });
 });
 
-//romance
+//get top ten romance
 export const getRomanceTen = functions.https.onRequest((request, response) => {
   cors(request, response, () => {
     const bigquery = new BigQuery({
@@ -259,7 +260,7 @@ export const getRomanceTen = functions.https.onRequest((request, response) => {
   });
 });
 
-//sports
+//get top ten sports
 export const getSportsTen = functions.https.onRequest((request, response) => {
   cors(request, response, () => {
     const bigquery = new BigQuery({
