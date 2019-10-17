@@ -141,13 +141,5 @@ export class StatsComponent implements OnInit {
       this.showSpinner = false;
       this.show = true;
     });
-
-    this.stat.getComedyTen().subscribe(res => {
-      console.log(res);
-    });
-
-    this.stat.getActionTopTen().subscribe(res => {
-      console.log(res);
-    });
   }
 }
