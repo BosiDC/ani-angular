@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
+import { Observable } from "rxjs";
+import { GenreFreq } from "../models/Chart";
 
 @Injectable({
   providedIn: "root"
@@ -21,9 +23,9 @@ export class StatService {
       .pipe(map((result: any) => result));
   }
 
-  getGenreFreq() {
+  getGenreFreq(): Observable<GenreFreq[]> {
     return this.http
-      .get<any[]>(
+      .get<GenreFreq[]>(
         "https://us-central1-anii-420.cloudfunctions.net/getGenreFreq"
       )
       .pipe(map((result: any) => result));

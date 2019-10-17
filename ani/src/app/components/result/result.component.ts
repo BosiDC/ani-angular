@@ -19,6 +19,7 @@ export class ResultComponent implements OnInit {
   ngOnInit() {
     this.resultService.getTop().subscribe(results => {
       this.results = results["top"];
+      console.log(this.results);
       this.showSpinner = false;
     });
     this.resultService.getCurrent().subscribe(currents => {
