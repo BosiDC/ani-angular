@@ -200,7 +200,7 @@ export class StatsComponent implements OnInit {
       this.barChartLabels2 = this.label_arr3;
     } else if (value == 2) {
       this.barChartData2[0].data = this.data_arr2;
-      this.barChartLabels2 = this.label_arr1;
+      this.barChartLabels2 = this.label_arr2;
     }
     //value = 1
     else {
