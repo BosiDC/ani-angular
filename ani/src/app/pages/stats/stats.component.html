@@ -6,7 +6,7 @@
             <div style="padding-bottom: 15%;">
                 <div>
                   <div style="display: block">
-                    <p>Current Top #10 Anime</p>
+                    <h3>Current Top #10 Anime</h3>
                     <canvas baseChart
                       [datasets]="barChartData"
                       [labels]="barChartLabels"
@@ -21,58 +21,35 @@
             <div style="padding-bottom: 15%;">
                 <div>
                   <div style="display: block">
-                        <p>Radar Chart</p>
+                        <h3>Top #10 Anime by Genre</h3>
+                            <nb-select placeholder="Action" shape="round"
+                            (selectedChange)="onChange($event)">
+                                <nb-option value="1">Action</nb-option>
+                                <nb-option value="2">Adventure</nb-option>
+                                <nb-option value="3">Romance</nb-option>
+                                <nb-option value="4">Comedy</nb-option>
+                                <nb-option value="5">Fantasy</nb-option>
+                            </nb-select>
+                        <canvas baseChart
+                      [datasets]="barChartData2"
+                      [labels]="barChartLabels2"
+                      [options]="barChartOptions2"
+                      [legend]="barChartLegend2"
+                      [chartType]="barChartType2"
+                      [colors]="chartColors">
+                      
+                    </canvas>
                   </div>
                 </div>
               </div>
-        <!--Graph/Chart 3#-->
-
-    <!--Right Column-->
-    <!--Graph/Chart 1#-->
-    <div style="padding-bottom: 15%;">
-      <div>
-        <div style="display: block">
-          <p>Bar Chart</p>
-          <canvas
-            baseChart
-            [datasets]="barChartData"
-            [labels]="barChartLabels"
-            [options]="barChartOptions"
-            [legend]="barChartLegend"
-            [chartType]="barChartType"
-          >
-          </canvas>
-        </div>
-      </div>
-    </div>
-    <!--Graph/Chart 2#-->
-    <div style="padding-bottom: 15%;">
-      <div>
-        <div style="display: block">
-          <p>Radar Chart</p>
-          <canvas
-            baseChart
-            [datasets]="radarChartData"
-            [options]="radarChartOptions"
-            [labels]="radarChartLabels"
-            [chartType]="radarChartType"
-          >
-          </canvas>
-        </div>
-      </div>
-    </div>
-    <!--Graph/Chart 3#-->
-
-
-    <!--Graph/Chart 4#-->
   </nb-layout-column>
   <nb-layout-column>
     <!--Left Column-->
     <!--Graph/Chart 1#-->
-    <div>
+    <div style="padding-bottom: 15%;">
       <div>
         <div style="display: block">
-          <p>Most Popular Genres by Frequency</p>
+          <h3>Most Popular Genres by Frequency</h3>
           <canvas
             baseChart
             [data]="pieChartData"
@@ -86,7 +63,22 @@
       </div>
     </div>
     <!--Graph/Chart 2#-->
-
+    <div style="padding-bottom: 15%;">
+    <div>
+      <div style="display: block">
+        <h3>Bar Chart</h3>
+        <canvas
+          baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+        >
+        </canvas>
+      </div>
+    </div>
+  </div>
     <!--Graph/Chart 3#-->
 
     <!--Graph/Chart 4#-->

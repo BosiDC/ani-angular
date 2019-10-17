@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import {
   ChartOptions,
   ChartType,
@@ -15,13 +15,12 @@ import { GenreFreq } from "../../models/Chart";
   styleUrls: ["./stats.component.scss"]
 })
 
-export class StatsComponent{
+export class StatsComponent implements OnInit{
   public label_arr = [];
   public data_arr = [];
   public max_y = 100;
   public min_y = 70;
 
-export class StatsComponent implements OnInit {
   genres: Label[] = [];
   freqGenres: number[] = [];
   genreFreqs: GenreFreq[];
@@ -49,52 +48,93 @@ export class StatsComponent implements OnInit {
   public barChartLabels: Label[] = this.label_arr;
   public barChartType: ChartType = 'bar'; 
   public barChartLegend = true;
-
+  public chartColors2: any[] = [
+    { 
+      backgroundColor:[
+      "#4363d8",
+      "#4363d8",
+      "#4363d8",
+      "#4363d8",
+      "#4363d8",
+      "#4363d8",
+      "#4363d8",
+      "#4363d8",
+      "#4363d8",
+      "#4363d8"
+      ]
+    }];
   public barChartData: ChartDataSets[] = [
 
     { data: this.data_arr, label: 'Score' }
   ];
-  //test chart --------------
 
-  constructor(private stats: StatService) {}
-
-  ngOnInit() {
-    this.stats.getTopTen().subscribe(res => {
-      for(var i = 0; i < res.length; i++){
-        var obj = res[i];
-        this.data_arr[i] = obj.averageScore;
-        this.label_arr[i] = obj.title;
-      }
-  });
-}
-
-    { data: [65, 59, 80, 81, 56, 55, 40], label: "Series A" },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: "Series B" }
-  ];
 
   //Chart 3$ -----------------------------------------------------------
-  public radarChartOptions: RadialChartOptions = {
-    responsive: true
-  };
-  public radarChartLabels: Label[] = [
-    "Eating",
-    "Drinking",
-    "Sleeping",
-    "Designing",
-    "Coding",
-    "Cycling",
-    "Running"
-  ];
+  public label_arr1 = [];
+  public data_arr1 = [];
 
-  public radarChartData: ChartDataSets[] = [
-    { data: [65, 59, 90, 81, 56, 55, 40], label: "Series A" },
-    { data: [28, 48, 40, 19, 96, 27, 100], label: "Series B" }
+  public label_arr2 = [];
+  public data_arr2 = [];
+
+  public label_arr3 = [];
+  public data_arr3 = [];
+
+  public label_arr4 = [];
+  public data_arr4 = [];
+
+  public label_arr5 = [];
+  public data_arr5 = [];
+
+  public barChartOptions2: ChartOptions = {
+    responsive: true,
+    // We use these empty structures as placeholders for dynamic theming.
+    scales: { xAxes: [{
+      ticks: {
+      },
+    }], yAxes: [{
+      ticks: {
+        max : 90,
+        min: 40
+      }
+    }] },
+    plugins: {
+      datalabels: {
+        anchor: 'end',
+        align: 'end',
+      }
+    }
+  };
+  public barChartLabels2: Label[] = this.label_arr1;
+  public barChartType2: ChartType = 'bar'; 
+  public barChartLegend2 = true;
+  public chartColors: any[] = [
+    { 
+      backgroundColor:[
+      "#3cb44b",
+      "#3cb44b",
+      "#3cb44b",
+      "#3cb44b",
+      "#3cb44b",
+      "#3cb44b",
+      "#3cb44b",
+      "#3cb44b",
+      "#3cb44b",
+      "#3cb44b",
+      "#3cb44b",
+      "#3cb44b"
+      ] 
+    }];
+  public barChartData2: ChartDataSets[] = [
+
+    { data: this.data_arr1, label: 'Score' }
   ];
-  public radarChartType: ChartType = "radar";
 
   //Pie Chart 1# -----------------------------------------------------------
   public pieChartOption: ChartOptions = {
-    responsive: true
+    responsive: true,
+    legend: {
+      position: 'left'
+    }
   };
   public pieChartType: ChartType = "pie";
   public pieChartLabel: Label[] = this.genres;
@@ -122,6 +162,34 @@ export class StatsComponent implements OnInit {
       ]
     }
   ];
+  //for nb-select
+
+  onChange(value){
+    console.log(value);
+    if (value == 5){
+      this.barChartData2[0].data = this.data_arr5
+      this.barChartLabels2 = this.label_arr5
+    }
+    else if (value == 4){
+      this.barChartData2[0].data = this.data_arr4
+      this.barChartLabels2 = this.label_arr4
+    }
+    else if (value == 3){
+      this.barChartData2[0].data = this.data_arr3
+      this.barChartLabels2 = this.label_arr3
+    }
+    else if (value == 2){
+      this.barChartData2[0].data = this.data_arr2
+      this.barChartLabels2 = this.label_arr1
+    }
+    //value = 1
+    else {
+      this.barChartData2[0].data = this.data_arr1
+      this.barChartLabels2 = this.label_arr1
+      
+    }
+    
+  }
 
   constructor(private stat: StatService) {}
 
@@ -141,15 +209,54 @@ export class StatsComponent implements OnInit {
     });
 
     this.stat.getTopTen().subscribe(res => {
-      console.log(res);
-    });
-
-    this.stat.getComedyTen().subscribe(res => {
-      console.log(res);
-    });
-
-    this.stat.getActionTopTen().subscribe(res => {
-      console.log(res);
-    });
+      for(var i = 0; i < res.length; i++){
+        var obj = res[i];
+        this.data_arr[i] = obj.averageScore;
+        this.label_arr[i] = obj.title;
+      }
+  });
+  
+      //Action 1
+      this.stat.getActionTopTen().subscribe(res => {
+        for(var i = 0; i < res.length; i++){
+          var obj = res[i];
+          this.data_arr1[i] = obj.averageScore;
+          this.label_arr1[i] = obj.title;
+        }
+      });
+       //Adventure 2
+      this.stat.getAdventureTen().subscribe(res => {
+        for(var i = 0; i < res.length; i++){
+          var obj = res[i];
+          this.data_arr2[i] = obj.averageScore;
+          this.label_arr2[i] = obj.title;
+        }
+      });
+       //Romance 3
+      this.stat.getRomanceTen().subscribe(res => {
+        for(var i = 0; i < res.length; i++){
+          var obj = res[i];
+          this.data_arr3[i] = obj.averageScore;
+          this.label_arr3[i] = obj.title;
+        }
+      });
+       //Comedy 4
+      this.stat.getComedyTen().subscribe(res => {
+        for(var i = 0; i < res.length; i++){
+          var obj = res[i];
+          this.data_arr4[i] = obj.averageScore;
+          this.label_arr4[i] = obj.title;
+        }
+      });
+       //Fantasy 5
+      this.stat.getFantasyTen().subscribe(res => {
+        for(var i = 0; i < res.length; i++){
+          var obj = res[i];
+          this.data_arr5[i] = obj.averageScore;
+          this.label_arr5[i] = obj.title;
+        }
+      });
+    
   }
+
 }
