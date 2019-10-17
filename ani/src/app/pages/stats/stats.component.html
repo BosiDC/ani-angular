@@ -58,7 +58,22 @@
       </div>
     </div>
     <!--Graph/Chart 2#-->
-
+    <div>
+      <div>
+        <div style="display: block">
+          <p>Most Popular Genres by Average Score</p>
+          <canvas
+            baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabel"
+            [legend]="pieChartLegend"
+            [chartType]="pieChartType"
+            [colors]="pieChartColors"
+          >
+          </canvas>
+        </div>
+      </div>
+    </div>
     <!--Graph/Chart 3#-->
 
     <!--Graph/Chart 4#-->
