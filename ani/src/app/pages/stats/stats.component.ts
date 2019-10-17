@@ -49,24 +49,24 @@ export class StatsComponent implements OnInit {
   public barChartType: ChartType = "bar";
   public barChartLegend = true;
   public chartColors2: any[] = [
-    { 
-      backgroundColor:[
-      "#4363d8",
-      "#4363d8",
-      "#4363d8",
-      "#4363d8",
-      "#4363d8",
-      "#4363d8",
-      "#4363d8",
-      "#4363d8",
-      "#4363d8",
-      "#4363d8"
+    {
+      backgroundColor: [
+        "#4363d8",
+        "#4363d8",
+        "#4363d8",
+        "#4363d8",
+        "#4363d8",
+        "#4363d8",
+        "#4363d8",
+        "#4363d8",
+        "#4363d8",
+        "#4363d8"
       ]
-    }];
+    }
+  ];
   public barChartData: ChartDataSets[] = [
     { data: this.data_arr, label: "Score" }
   ];
-
 
   //Chart 3$ -----------------------------------------------------------
   public label_arr1 = [];
@@ -87,45 +87,51 @@ export class StatsComponent implements OnInit {
   public barChartOptions2: ChartOptions = {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.
-    scales: { xAxes: [{
-      ticks: {
-      },
-    }], yAxes: [{
-      ticks: {
-        max : 90,
-        min: 40
-      }
-    }] },
+    scales: {
+      xAxes: [
+        {
+          ticks: {}
+        }
+      ],
+      yAxes: [
+        {
+          ticks: {
+            max: 90,
+            min: 40
+          }
+        }
+      ]
+    },
     plugins: {
       datalabels: {
-        anchor: 'end',
-        align: 'end',
+        anchor: "end",
+        align: "end"
       }
     }
   };
   public barChartLabels2: Label[] = this.label_arr1;
-  public barChartType2: ChartType = 'bar'; 
+  public barChartType2: ChartType = "bar";
   public barChartLegend2 = true;
   public chartColors: any[] = [
-    { 
-      backgroundColor:[
-      "#3cb44b",
-      "#3cb44b",
-      "#3cb44b",
-      "#3cb44b",
-      "#3cb44b",
-      "#3cb44b",
-      "#3cb44b",
-      "#3cb44b",
-      "#3cb44b",
-      "#3cb44b",
-      "#3cb44b",
-      "#3cb44b"
-      ] 
-    }];
+    {
+      backgroundColor: [
+        "#3cb44b",
+        "#3cb44b",
+        "#3cb44b",
+        "#3cb44b",
+        "#3cb44b",
+        "#3cb44b",
+        "#3cb44b",
+        "#3cb44b",
+        "#3cb44b",
+        "#3cb44b",
+        "#3cb44b",
+        "#3cb44b"
+      ]
+    }
+  ];
   public barChartData2: ChartDataSets[] = [
-
-    { data: this.data_arr1, label: 'Score' }
+    { data: this.data_arr1, label: "Score" }
   ];
 
   //Pie Chart 1# -----------------------------------------------------------
@@ -160,35 +166,47 @@ export class StatsComponent implements OnInit {
       ]
     }
   ];
+
+  public barChartOptionTwo: ChartOptions = {
+    responsive: true,
+    plugins: {
+      datalabels: {
+        anchor: "end",
+        align: "end"
+      }
+    }
+  };
+  public barChartLabelsTwo: Label[] = this.avgGenresLabels;
+  public barChartTypeTwo: ChartType = "bar";
+  public barChartLegendTwo = true;
+  public barChartDataTwo: ChartDataSets[] = [
+    { data: this.avgScoreGenres, label: "Score" }
+  ];
+
   showSpinner: boolean;
   show: boolean;
   //for nb-select
 
-  onChange(value){
+  onChange(value) {
     console.log(value);
-    if (value == 5){
-      this.barChartData2[0].data = this.data_arr5
-      this.barChartLabels2 = this.label_arr5
-    }
-    else if (value == 4){
-      this.barChartData2[0].data = this.data_arr4
-      this.barChartLabels2 = this.label_arr4
-    }
-    else if (value == 3){
-      this.barChartData2[0].data = this.data_arr3
-      this.barChartLabels2 = this.label_arr3
-    }
-    else if (value == 2){
-      this.barChartData2[0].data = this.data_arr2
-      this.barChartLabels2 = this.label_arr1
+    if (value == 5) {
+      this.barChartData2[0].data = this.data_arr5;
+      this.barChartLabels2 = this.label_arr5;
+    } else if (value == 4) {
+      this.barChartData2[0].data = this.data_arr4;
+      this.barChartLabels2 = this.label_arr4;
+    } else if (value == 3) {
+      this.barChartData2[0].data = this.data_arr3;
+      this.barChartLabels2 = this.label_arr3;
+    } else if (value == 2) {
+      this.barChartData2[0].data = this.data_arr2;
+      this.barChartLabels2 = this.label_arr1;
     }
     //value = 1
     else {
-      this.barChartData2[0].data = this.data_arr1
-      this.barChartLabels2 = this.label_arr1
-      
+      this.barChartData2[0].data = this.data_arr1;
+      this.barChartLabels2 = this.label_arr1;
     }
-    
   }
 
   constructor(private stat: StatService) {}
@@ -220,63 +238,52 @@ export class StatsComponent implements OnInit {
     });
 
     this.stat.getTopTen().subscribe(res => {
-      for(var i = 0; i < res.length; i++){
-        var obj = res[i];
-        this.data_arr[i] = obj.averageScore;
-        this.label_arr[i] = obj.title;
-      }
-  });
-  
-      //Action 1
-      this.stat.getActionTopTen().subscribe(res => {
-        for(var i = 0; i < res.length; i++){
-          var obj = res[i];
-          this.data_arr1[i] = obj.averageScore;
-          this.label_arr1[i] = obj.title;
-        }
-      });
-       //Adventure 2
-      this.stat.getAdventureTen().subscribe(res => {
-        for(var i = 0; i < res.length; i++){
-          var obj = res[i];
-          this.data_arr2[i] = obj.averageScore;
-          this.label_arr2[i] = obj.title;
-        }
-      });
-       //Romance 3
-      this.stat.getRomanceTen().subscribe(res => {
-        for(var i = 0; i < res.length; i++){
-          var obj = res[i];
-          this.data_arr3[i] = obj.averageScore;
-          this.label_arr3[i] = obj.title;
-        }
-      });
-       //Comedy 4
-      this.stat.getComedyTen().subscribe(res => {
-        for(var i = 0; i < res.length; i++){
-          var obj = res[i];
-          this.data_arr4[i] = obj.averageScore;
-          this.label_arr4[i] = obj.title;
-        }
-      });
-       //Fantasy 5
-      this.stat.getFantasyTen().subscribe(res => {
-        for(var i = 0; i < res.length; i++){
-          var obj = res[i];
-          this.data_arr5[i] = obj.averageScore;
-          this.label_arr5[i] = obj.title;
-        }
-      });
-    
-  }
-
       for (var i = 0; i < res.length; i++) {
         var obj = res[i];
         this.data_arr[i] = obj.averageScore;
         this.label_arr[i] = obj.title;
       }
-      this.showSpinner = false;
-      this.show = true;
+    });
+
+    //Action 1
+    this.stat.getActionTopTen().subscribe(res => {
+      for (var i = 0; i < res.length; i++) {
+        var obj = res[i];
+        this.data_arr1[i] = obj.averageScore;
+        this.label_arr1[i] = obj.title;
+      }
+    });
+    //Adventure 2
+    this.stat.getAdventureTen().subscribe(res => {
+      for (var i = 0; i < res.length; i++) {
+        var obj = res[i];
+        this.data_arr2[i] = obj.averageScore;
+        this.label_arr2[i] = obj.title;
+      }
+    });
+    //Romance 3
+    this.stat.getRomanceTen().subscribe(res => {
+      for (var i = 0; i < res.length; i++) {
+        var obj = res[i];
+        this.data_arr3[i] = obj.averageScore;
+        this.label_arr3[i] = obj.title;
+      }
+    });
+    //Comedy 4
+    this.stat.getComedyTen().subscribe(res => {
+      for (var i = 0; i < res.length; i++) {
+        var obj = res[i];
+        this.data_arr4[i] = obj.averageScore;
+        this.label_arr4[i] = obj.title;
+      }
+    });
+    //Fantasy 5
+    this.stat.getFantasyTen().subscribe(res => {
+      for (var i = 0; i < res.length; i++) {
+        var obj = res[i];
+        this.data_arr5[i] = obj.averageScore;
+        this.label_arr5[i] = obj.title;
+      }
     });
   }
 }
