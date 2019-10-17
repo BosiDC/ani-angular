@@ -7,6 +7,7 @@ import {
 } from "chart.js";
 import { Label } from "ng2-charts";
 import { StatService } from "src/app/services/stat.service";
+import { GenreFreq } from "../../models/Chart";
 
 @Component({
   selector: "app-stats",
@@ -14,6 +15,9 @@ import { StatService } from "src/app/services/stat.service";
   styleUrls: ["./stats.component.scss"]
 })
 export class StatsComponent implements OnInit {
+  genres: Label[] = [];
+  freqGenres: number[] = [];
+  genreFreqs: GenreFreq[];
   //Chart 1# -----------------------------------------------------------
   public barChartOptions: ChartOptions = {
     responsive: true,
@@ -43,18 +47,6 @@ export class StatsComponent implements OnInit {
     { data: [28, 48, 40, 19, 86, 27, 90], label: "Series B" }
   ];
 
-  //Chart 2# -----------------------------------------------------------
-  public barChartOptions2: ChartOptions = {
-    responsive: true
-  };
-  public barChartType2: ChartType = "pie";
-  public barChartLegend2 = true;
-
-  public barChartData2: ChartDataSets[] = [
-    { data: [1, 2, 3], label: "Approved", stack: "a" }
-  ];
-  public barChartLabels2: string[] = ["P", "R", "B"];
-
   //Chart 3$ -----------------------------------------------------------
   public radarChartOptions: RadialChartOptions = {
     responsive: true
@@ -75,13 +67,51 @@ export class StatsComponent implements OnInit {
   ];
   public radarChartType: ChartType = "radar";
 
+  //Chart 2# -----------------------------------------------------------
+  public barChartOptions2: ChartOptions = {
+    responsive: true
+  };
+  public barChartType2: ChartType = "pie";
+  public barChartLegend2 = true;
+
+  public barChartData2: ChartDataSets[] = [
+    { data: [1, 2, 3], label: "Approved", stack: "a" }
+  ];
+  public barChartLabels2: string[] = ["P", "R", "B"];
+
+  public pieChartOption: ChartOptions = {
+    responsive: true
+  };
+  public pieChartType: ChartType = "pie";
+  public pieChartLabel: Label[] = this.genres;
+  public pieChartData: number[] = this.freqGenres;
+
   constructor(private stat: StatService) {}
 
   ngOnInit() {
-    this.stat.getData().subscribe(res => {
+    this.stat.getGenreAvgScore().subscribe(res => {
       console.log(res);
     });
-    this.stat.getHello().subscribe(res => {
+    this.stat.getGenreFreq().subscribe(res => {
+      this.genreFreqs = res;
+      console.log(this.genreFreqs);
+      for (let genreFreq of this.genreFreqs) {
+        let genre = genreFreq.genres;
+        let freq = genreFreq.g_freg;
+        this.genres.push(genre);
+        this.freqGenres.push(freq);
+        console.log(this.freqGenres);
+        console.log(freq);
+        console.log(this.pieChartData);
+      }
+    });
+    this.stat.getTopTen().subscribe(res => {
+      console.log(res);
+    });
+    this.stat.getComedyTen().subscribe(res => {
+      console.log(res);
+    });
+    this.stat.getActionTopTen().subscribe(res => {
       console.log(res);
     });
   }
