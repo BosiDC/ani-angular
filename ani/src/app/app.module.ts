@@ -50,6 +50,7 @@ import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.co
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { ProfileStatComponent } from './components/profile-stat/profile-stat.component';
 import { SeasonComponent } from './pages/season/season.component';
+import { StatService } from './services/stat.service';
 
 @NgModule({
   declarations: [
@@ -119,7 +120,7 @@ import { SeasonComponent } from './pages/season/season.component';
     AngularFireStorageModule,
     RouterModule
   ],
-  providers: [],
+  providers: [StatService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

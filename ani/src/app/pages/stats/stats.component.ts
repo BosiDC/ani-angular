@@ -13,76 +13,49 @@ import { StatService } from "src/app/services/stat.service";
   templateUrl: "./stats.component.html",
   styleUrls: ["./stats.component.scss"]
 })
-export class StatsComponent implements OnInit {
+export class StatsComponent{
+  public label_arr = [];
+  public data_arr = [];
+  public max_y = 100;
+  public min_y = 70;
   //Chart 1# -----------------------------------------------------------
   public barChartOptions: ChartOptions = {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.
-    scales: { xAxes: [{}], yAxes: [{}] },
+    scales: { xAxes: [{
+      ticks: {
+      }
+    }], yAxes: [{
+      ticks: {
+        max : 90,
+        min: 80
+      }
+    }] },
     plugins: {
       datalabels: {
-        anchor: "end",
-        align: "end"
+        anchor: 'end',
+        align: 'end',
       }
     }
   };
-  public barChartLabels: Label[] = [
-    "2006",
-    "2007",
-    "2008",
-    "2009",
-    "2010",
-    "2011",
-    "2012"
-  ];
-  public barChartType: ChartType = "bar";
+  public barChartLabels: Label[] = this.label_arr;
+  public barChartType: ChartType = 'bar'; 
   public barChartLegend = true;
 
   public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: "Series A" },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: "Series B" }
+    { data: this.data_arr, label: 'Score' }
   ];
+  //test chart --------------
 
-  //Chart 2# -----------------------------------------------------------
-  public barChartOptions2: ChartOptions = {
-    responsive: true
-  };
-  public barChartType2: ChartType = "pie";
-  public barChartLegend2 = true;
-
-  public barChartData2: ChartDataSets[] = [
-    { data: [1, 2, 3], label: "Approved", stack: "a" }
-  ];
-  public barChartLabels2: string[] = ["P", "R", "B"];
-
-  //Chart 3$ -----------------------------------------------------------
-  public radarChartOptions: RadialChartOptions = {
-    responsive: true
-  };
-  public radarChartLabels: Label[] = [
-    "Eating",
-    "Drinking",
-    "Sleeping",
-    "Designing",
-    "Coding",
-    "Cycling",
-    "Running"
-  ];
-
-  public radarChartData: ChartDataSets[] = [
-    { data: [65, 59, 90, 81, 56, 55, 40], label: "Series A" },
-    { data: [28, 48, 40, 19, 96, 27, 100], label: "Series B" }
-  ];
-  public radarChartType: ChartType = "radar";
-
-  constructor(private stat: StatService) {}
+  constructor(private stats: StatService) {}
 
   ngOnInit() {
-    this.stat.getData().subscribe(res => {
-      console.log(res);
-    });
-    this.stat.getHello().subscribe(res => {
-      console.log(res);
-    });
-  }
+    this.stats.getTopTen().subscribe(res => {
+      for(var i = 0; i < res.length; i++){
+        var obj = res[i];
+        this.data_arr[i] = obj.averageScore;
+        this.label_arr[i] = obj.title;
+      }
+  });
+}
 }
