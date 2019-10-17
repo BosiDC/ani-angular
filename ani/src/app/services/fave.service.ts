@@ -50,7 +50,8 @@ export class FaveService {
             return {
               id: action.payload.doc.id,
               title: data.title,
-              url: data.url
+              url: data.url,
+              type: data.type
             };
           });
         })

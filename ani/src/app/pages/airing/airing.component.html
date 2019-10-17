@@ -1,0 +1,12 @@
+<h2>All Time Top Airing</h2>
+<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+<table style="width: 100%;">
+  <tr>
+    <app-result-item
+      *ngFor="let result of results"
+      [result]="result"
+      style="padding-right: 15px;"
+    >
+    </app-result-item>
+  </tr>
+</table>

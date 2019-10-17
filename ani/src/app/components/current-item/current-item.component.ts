@@ -22,6 +22,8 @@ export class CurrentItemComponent implements OnInit {
       const fave = {
         title: this.current.title,
         url: this.current.url,
+        type: this.current.type,
+        mal_id: this.current.mal_id,
         checked: true
       };
       this.fave.addFave(fave);

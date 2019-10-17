@@ -1,4 +1,9 @@
-<h2>Current Season Fall</h2>
+<div id="inline">
+  <h2 id="line">Fall Season 2019</h2>
+  <button nbButton routerLink="/season" size="tiny" style="float:right;">
+    Show More
+  </button>
+</div>
 <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
 <table style="width: 100%;">
   <tr>
@@ -11,7 +16,12 @@
   </tr>
 </table>
 
-<h2>Current Top Airing</h2>
+<div id="inline">
+  <h2 id="line">Top Airing</h2>
+  <button nbButton routerLink="/airing" size="tiny" style="float:right;">
+    Show More
+  </button>
+</div>
 <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
 <table style="width: 100%;">
   <tr>
