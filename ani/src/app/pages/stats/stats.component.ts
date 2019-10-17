@@ -67,18 +67,7 @@ export class StatsComponent implements OnInit {
   ];
   public radarChartType: ChartType = "radar";
 
-  //Chart 2# -----------------------------------------------------------
-  public barChartOptions2: ChartOptions = {
-    responsive: true
-  };
-  public barChartType2: ChartType = "pie";
-  public barChartLegend2 = true;
-
-  public barChartData2: ChartDataSets[] = [
-    { data: [1, 2, 3], label: "Approved", stack: "a" }
-  ];
-  public barChartLabels2: string[] = ["P", "R", "B"];
-
+  //Pie Chart 1# -----------------------------------------------------------
   public pieChartOption: ChartOptions = {
     responsive: true
   };
@@ -123,17 +112,17 @@ export class StatsComponent implements OnInit {
         let freq = genreFreq.g_freg;
         this.genres.push(genre);
         this.freqGenres.push(freq);
-        console.log(this.freqGenres);
-        console.log(freq);
-        console.log(this.pieChartData);
       }
     });
+
     this.stat.getTopTen().subscribe(res => {
       console.log(res);
     });
+
     this.stat.getComedyTen().subscribe(res => {
       console.log(res);
     });
+
     this.stat.getActionTopTen().subscribe(res => {
       console.log(res);
     });
