@@ -15,13 +15,14 @@ import { GenreFreq } from "../../models/Chart";
   styleUrls: ["./stats.component.scss"]
 })
 export class StatsComponent implements OnInit {
-  public label_arr = [];
-  public data_arr = [];
-  public max_y = 100;
-  public min_y = 80;
+  label_arr = [];
+  data_arr = [];
   genres: Label[] = [];
   freqGenres: number[] = [];
   genreFreqs: GenreFreq[];
+  avgGenres: any[];
+  avgGenresLabels: Label[] = [];
+  avgScoreGenres: number[] = [];
   //Chart 1# -----------------------------------------------------------
   public barChartOptions: ChartOptions = {
     responsive: true,
@@ -51,11 +52,29 @@ export class StatsComponent implements OnInit {
     { data: this.data_arr, label: "Score" }
   ];
 
-  //Chart 3$ -----------------------------------------------------------
+  //Chart 2# -----------------------------------------------------------
+  public barChartOptionTwo: ChartOptions = {
+    responsive: true,
+    plugins: {
+      datalabels: {
+        anchor: "end",
+        align: "end"
+      }
+    }
+  };
+  public barChartLabelsTwo: Label[] = this.avgGenresLabels;
+  public barChartTypeTwo: ChartType = "bar";
+  public barChartLegendTwo = true;
+  public barChartDataTwo: ChartDataSets[] = [
+    { data: this.avgScoreGenres, label: "Score" }
+  ];
 
   //Pie Chart 1# -----------------------------------------------------------
-  public pieChartOption: ChartOptions = {
-    responsive: true
+  public pieChartOptions: ChartOptions = {
+    responsive: true,
+    legend: {
+      position: "top"
+    }
   };
   public pieChartType: ChartType = "pie";
   public pieChartLabel: Label[] = this.genres;
@@ -64,7 +83,6 @@ export class StatsComponent implements OnInit {
   public pieChartColors = [
     {
       backgroundColor: [
-        "e6194b",
         "#e6194b",
         "#3cb44b",
         "#ffe119",
@@ -83,22 +101,35 @@ export class StatsComponent implements OnInit {
       ]
     }
   ];
+  showSpinner: boolean;
+  show: boolean;
 
   constructor(private stat: StatService) {}
 
   ngOnInit() {
+    this.showSpinner = true;
+    this.show = false;
     this.stat.getGenreAvgScore().subscribe(res => {
-      console.log(res);
+      this.avgGenres = res;
+      for (let avgGenre of this.avgGenres) {
+        let genre = avgGenre.genres;
+        let avgScore = avgGenre.asScore;
+        this.avgGenresLabels.push(genre);
+        this.avgScoreGenres.push(avgScore);
+      }
+      this.showSpinner = false;
+      this.show = true;
     });
     this.stat.getGenreFreq().subscribe(res => {
       this.genreFreqs = res;
-      console.log(this.genreFreqs);
       for (let genreFreq of this.genreFreqs) {
         let genre = genreFreq.genres;
         let freq = genreFreq.g_freg;
         this.genres.push(genre);
         this.freqGenres.push(freq);
       }
+      this.showSpinner = false;
+      this.show = true;
     });
 
     this.stat.getTopTen().subscribe(res => {
@@ -107,6 +138,8 @@ export class StatsComponent implements OnInit {
         this.data_arr[i] = obj.averageScore;
         this.label_arr[i] = obj.title;
       }
+      this.showSpinner = false;
+      this.show = true;
     });
 
     this.stat.getComedyTen().subscribe(res => {
