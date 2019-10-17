@@ -14,35 +14,60 @@ import { GenreFreq } from "../../models/Chart";
   templateUrl: "./stats.component.html",
   styleUrls: ["./stats.component.scss"]
 })
+
+export class StatsComponent{
+  public label_arr = [];
+  public data_arr = [];
+  public max_y = 100;
+  public min_y = 70;
+
 export class StatsComponent implements OnInit {
   genres: Label[] = [];
   freqGenres: number[] = [];
   genreFreqs: GenreFreq[];
+
   //Chart 1# -----------------------------------------------------------
   public barChartOptions: ChartOptions = {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.
-    scales: { xAxes: [{}], yAxes: [{}] },
+    scales: { xAxes: [{
+      ticks: {
+      }
+    }], yAxes: [{
+      ticks: {
+        max : 90,
+        min: 80
+      }
+    }] },
     plugins: {
       datalabels: {
-        anchor: "end",
-        align: "end"
+        anchor: 'end',
+        align: 'end',
       }
     }
   };
-  public barChartLabels: Label[] = [
-    "2006",
-    "2007",
-    "2008",
-    "2009",
-    "2010",
-    "2011",
-    "2012"
-  ];
-  public barChartType: ChartType = "bar";
+  public barChartLabels: Label[] = this.label_arr;
+  public barChartType: ChartType = 'bar'; 
   public barChartLegend = true;
 
   public barChartData: ChartDataSets[] = [
+
+    { data: this.data_arr, label: 'Score' }
+  ];
+  //test chart --------------
+
+  constructor(private stats: StatService) {}
+
+  ngOnInit() {
+    this.stats.getTopTen().subscribe(res => {
+      for(var i = 0; i < res.length; i++){
+        var obj = res[i];
+        this.data_arr[i] = obj.averageScore;
+        this.label_arr[i] = obj.title;
+      }
+  });
+}
+
     { data: [65, 59, 80, 81, 56, 55, 40], label: "Series A" },
     { data: [28, 48, 40, 19, 86, 27, 90], label: "Series B" }
   ];
