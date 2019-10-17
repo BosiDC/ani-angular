@@ -15,6 +15,7 @@ import { ResultItemComponent } from "./components/result-item/result-item.compon
 import { FooterComponent } from "./layout/footer/footer.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ChartsModule } from "ng2-charts";
+
 //nebular
 import {
   NbThemeModule,
