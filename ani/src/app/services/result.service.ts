@@ -43,19 +43,19 @@ export class ResultService {
     if (name == undefined) {
       httpParams = httpParams.set("q", "");
     }
-    if (order == undefined) {
+    if (order == undefined || order == "no") {
       httpParams = httpParams.set("order_by", "");
     }
-    if (type == undefined) {
+    if (type == undefined || type == "no") {
       httpParams = httpParams.set("type", "");
     }
-    if (status == undefined) {
+    if (status == undefined || status == "no") {
       httpParams = httpParams.set("status", "");
     }
-    if (rating == undefined) {
+    if (rating == undefined || rating == "no") {
       httpParams = httpParams.set("rated", "");
     }
-    if (genre == undefined) {
+    if (genre == undefined || genre == "no") {
       httpParams = httpParams.set("genre", "");
     }
     return this.http.get<Search[]>(this.searchURL, { params: httpParams });

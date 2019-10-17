@@ -15,6 +15,7 @@ import { ResultItemComponent } from "./components/result-item/result-item.compon
 import { FooterComponent } from "./layout/footer/footer.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ChartsModule } from "ng2-charts";
+
 //nebular
 import {
   NbThemeModule,
@@ -29,7 +30,7 @@ import {
   NbListModule,
   NbUserModule,
   NbToggleModule,
-  NbTabsetModule,
+  NbTabsetModule
 } from "@nebular/theme";
 
 import { NbEvaIconsModule } from "@nebular/eva-icons";
@@ -46,9 +47,13 @@ import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { FavouriteItemComponent } from "./components/favourite-item/favourite-item.component";
 import { StatsComponent } from "./pages/stats/stats.component";
-import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
-import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-import { ProfileStatComponent } from './components/profile-stat/profile-stat.component';
+
+import { LoadingSpinnerComponent } from "./ui/loading-spinner/loading-spinner.component";
+import { EditProfileComponent } from "./components/edit-profile/edit-profile.component";
+import { ProfileStatComponent } from "./components/profile-stat/profile-stat.component";
+import { SeasonComponent } from "./pages/season/season.component";
+import { StatService } from "./services/stat.service";
+import { AiringComponent } from "./pages/airing/airing.component";
 
 @NgModule({
   declarations: [
@@ -68,7 +73,9 @@ import { ProfileStatComponent } from './components/profile-stat/profile-stat.com
     StatsComponent,
     LoadingSpinnerComponent,
     EditProfileComponent,
-    ProfileStatComponent
+    ProfileStatComponent,
+    SeasonComponent,
+    AiringComponent
   ],
   imports: [
     BrowserModule,
@@ -117,7 +124,7 @@ import { ProfileStatComponent } from './components/profile-stat/profile-stat.com
     AngularFireStorageModule,
     RouterModule
   ],
-  providers: [],
+  providers: [StatService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

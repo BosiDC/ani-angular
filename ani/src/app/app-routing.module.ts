@@ -7,6 +7,8 @@ import { SearchComponent } from "./components/search/search.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { LoggedInGuard } from "ngx-auth-firebaseui";
 import { StatsComponent } from "./pages/stats/stats.component";
+import { SeasonComponent } from "./pages/season/season.component";
+import { AiringComponent } from "./pages/airing/airing.component";
 
 const routes: Routes = [
   { path: "", component: ResultComponent },
@@ -18,7 +20,9 @@ const routes: Routes = [
     canActivate: [LoggedInGuard]
   },
   { path: "search", component: SearchComponent },
-  { path: "login", component: LoginComponent }
+  { path: "login", component: LoginComponent },
+  { path: "season", component: SeasonComponent },
+  { path: "airing", component: AiringComponent }
 ];
 
 export const appRouting = RouterModule.forRoot(routes);

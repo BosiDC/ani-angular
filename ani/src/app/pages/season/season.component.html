@@ -1,0 +1,12 @@
+<h2>Current Season Fall</h2>
+<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+<table style="width: 100%;">
+  <tr>
+    <app-current-item
+      *ngFor="let current of currents"
+      [current]="current"
+      style="padding-right: 15px;"
+    >
+    </app-current-item>
+  </tr>
+</table>
